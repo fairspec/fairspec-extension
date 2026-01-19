@@ -13,7 +13,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "frictionless-ts": "^1.0.1"
+    "@fairspect/metadata": "^0.2.2"
   }
 }
-

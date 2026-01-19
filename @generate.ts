@@ -7,6 +7,8 @@ import pc from "picocolors"
 import { replaceInFile } from "replace-in-file"
 import metadata from "./package.json" with { type: "json" }
 
+// TODO: Use zod/pydantic for generated models
+
 process.chdir(import.meta.dirname)
 const $ = execa({ stdout: ["inherit", "pipe"], preferLocal: true })
 const loader = spinner()
@@ -79,32 +81,29 @@ website/profiles/dataset.json
 --additionalProperties false
 --bannerComment '// biome-ignore-all format: DO NOT UPDATE this @generated file'
 --no-style.semi
-> sdk-ts/profile.ts
+> typescript/models/dataset.ts
 `
 
-const typescriptIndex: string[] = []
-for (const file of await readdir("extension/schemas")) {
-  const name = basename(file, extname(file))
-  typescriptIndex.push(`export * from "./${name}.ts"`)
+const typescriptIndex: string[] = ['export * from "./dataset.ts"']
+for (const file of await readdir("website/schemas")) {
+  const basename = nodePath.basename(file, nodePath.extname(file))
+  typescriptIndex.push(`export * from "./${basename}.ts"`)
 
   await $({ shell: true })`
-  dpkit schema convert
-  extension/schemas/${file}
-  --to-format jsonschema
+  cat
+  website/schemas/${file}
   | json2ts
   --additionalProperties false
   --bannerComment '// biome-ignore-all format: DO NOT UPDATE this @generated file'
   --no-style.semi
-  > sdk-ts/schemas/${name}.ts
+  > typescript/models/${basename}.ts
   `
 }
 
-await writeFile(
-  `${root}/sdk-ts/schemas/index.ts`,
-  `${typescriptIndex.join("\n")}\n`,
-)
+await writeFile(`typescript/models/index.ts`, `${typescriptIndex.join("\n")}\n`)
 
 loader.stop("TypeScript updated!")
+process.exit()
 
 // Python
 

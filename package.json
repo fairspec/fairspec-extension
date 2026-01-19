@@ -44,6 +44,7 @@
     "husky": "9.1.7",
     "json-schema-doc-ts": "2.0.0",
     "json-schema-to-typescript": "15.0.4",
+    "json-schema-to-zod": "2.7.0",
     "npkill": "0.12.2",
     "npm-check-updates": "18.0.1",
     "picocolors": "1.1.1",

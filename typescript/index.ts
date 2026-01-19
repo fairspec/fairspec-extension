@@ -1,7 +1,7 @@
-import type * as standard from "frictionless-ts"
-import type * as extension from "./profile.ts"
+import type * as standard from "@fairspect/metadata"
+import type * as extension from "./models/dataset.ts"
 
 export type Resource = standard.Resource & extension.Resource
-export type Package = standard.Package & extension.Package
+export type Dataset = standard.Dataset & extension.Dataset
 
-export type * from "./schemas/index.ts"
+export type * from "./models/index.ts"
