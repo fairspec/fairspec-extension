@@ -22,11 +22,9 @@
           "website/content/docs/specification/metadata.md",
           "website/content/docs/specification/data/*.md",
           "python/pyproject.toml",
-          "python/*/profile.py",
-          "python/*/schemas/*.py",
+          "python/models/*.py",
           "typescript/package.json",
-          "typescript/profile.ts",
-          "typescript/schemas/*.ts",
+          "typescript/models/*.ts",
           "package.json"
         ]
       }
