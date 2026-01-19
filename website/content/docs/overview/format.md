@@ -5,11 +5,11 @@ sidebar:
 ---
 
 > [!TIP]
-> This is a template to create your own Data Package Extension. To start using it, click "Use this template" on [the repository](https://github.com/datisthq/extensiondp) in the top right corner. After cloning a newly created repo, run `git tag v0.1.0 && git push --tags` to create an initial semantic version. Read [Contribution Guide](../contributing) for following steps. **This documentation is just a placeholder to get started with!**
+> This is a template to create your own Fairspec Extension. To start using it, click "Use this template" on [the repository](https://github.com/fairspec/fairspec-extension) in the top right corner. After cloning a newly created repo, run `git tag v0.1.0 && git push --tags` to create an initial semantic version. Read [Contribution Guide](../contributing) for following steps. **This documentation is just a placeholder to get started with!**
 
-Extension DP (Data Package Extension Template) is a data exchange format that helps `PLACEHOLDER` share their `PLACEHOLDER`. It is developed on top of the Data Package standard.
+Fairspec Extension is a data exchange format that helps `PLACEHOLDER` share their `PLACEHOLDER`. It is developed on top of the Fairspec standard.
 
-## Why Extension DP?
+## Why Fairspec Extension?
 
 The `PLACEHOLDER` lacks a standardized format for exchanging  data among publishers, and aggregation platforms. This creates several challenges:
 
@@ -18,26 +18,26 @@ The `PLACEHOLDER` lacks a standardized format for exchanging  data among publish
 - **Limited interoperability**: Aggregators must maintain custom integrations for each data source
 - **Data quality issues**: Without clear schemas, data validation and quality control are challenging
 
-Extension DP solves these problems by providing a **standardized, validated, and extensible format** for sharing data. Built on the proven [Data Package](https://datapackage.org/) standard, it ensures data is machine-readable, well-documented, and easy to integrate.
+Fairspec Extension solves these problems by providing a **standardized, validated, and extensible format** for sharing data. Built on the proven [Fairspec](https://fairspec.org/) standard, it ensures data is machine-readable, well-documented, and easy to integrate.
 
-## Structure of a Extension DP
+## Structure of a Fairspec Extension
 
-A Extension DP is a [Data Package](https://datapackage.org/) that follows the Data Package specification. The file contains metadata about the package and one or more data resources:
+A Fairspec Extension is a [Fairspec](https://fairspec.org/) that follows the Fairspec specification. The file contains metadata about the package and one or more data resources:
 
 ### Basic Structure
 
 ```json
 {
-  "$schema": "https://datisthq.github.io/extensiondp/extension/<version>/profile.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/<version>/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "schema": "https://datisthq.github.io/extensiondp/extension/<version>/schemas/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/<version>/table1.json",
       "data": [{...}, {...}, {...}]
     },
     {
       "name": "table2",
-      "schema": "https://datisthq.github.io/extensiondp/extension/<version>/schemas/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/<version>/table2.json",
       "data": [{...}]
     }
   ]
@@ -46,7 +46,7 @@ A Extension DP is a [Data Package](https://datapackage.org/) that follows the Da
 
 ### Key Components
 
-1. **Profile**: References the Extension DP profile that defines the structure and validation rules
+1. **Profile**: References the Fairspec Extension profile that defines the structure and validation rules
 2. **Resources**: An array containing resources:
    - **table1**: First table
    - **table2**: Second table (and so on)

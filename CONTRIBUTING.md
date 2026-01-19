@@ -13,8 +13,8 @@ Here you can find the guidelines for contributing to the extension. We welcome a
   - Python 3.12+ (with uv) - [How to Install](https://docs.astral.sh/uv/getting-started/installation)
 - **Releasing**:
   - Configured a pending trusted publisher on [PyPI](https://pypi.org/manage/account/publishing/) matching the extension name (slug)
-  - Created an access token on [NPM](https://www.npmjs.com/settings/roll/tokens), added to [Github](https://github.com/datisthq/extensiondp/settings/secrets/actions) as a repository secret `NPM_TOKEN`
-  - In case you use it on GitHub, updated the publishing source in [the settings](https://github.com/datisthq/extensiondp/settings/pages) to `Github Actions`.
+  - Created an access token on [NPM](https://www.npmjs.com/settings/roll/tokens), added to [Github](https://github.com/fairspec/fairspec-extension/settings/secrets/actions) as a repository secret `NPM_TOKEN`
+  - In case you use it on GitHub, updated the publishing source in [the settings](https://github.com/fairspec/fairspec-extension/settings/pages) to `Github Actions`.
 
 ## Development
 
@@ -26,8 +26,8 @@ Here you can find the guidelines for contributing to the extension. We welcome a
 Start by cloning the repository or its fork, installing the dependencies, configuring the extension, and starting the site:
 
 ```bash
-git clone https://github.com/datisthq/extensiondp.git
-cd extensiondp
+git clone https://github.com/fairspec/fairspec-extension.git
+cd fairspec-extension
 pnpm install
 pnpm configure
 pnpm start
@@ -46,7 +46,7 @@ pnpm start
 
 The fiels you need to edit to update the extension:
 
-- **extension/profile.json** - Edit the profile to model your data package
+- **extension/profile.json** - Edit the profile to model your dataset
 - **extension/schemas/** - Edit the schemas to model your data tables
 - **extension/content/docs/index.mdx** - Edit the homepage
 - **extension/content/docs/overview/** - Edit not generated documentation pages

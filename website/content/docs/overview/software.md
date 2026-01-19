@@ -4,24 +4,24 @@ sidebar:
   order: 2
 ---
 
-Extension DP provides SDKs for Python and TypeScript/JavaScript to make it easy to publish and consume Extension Data Packages.
+Fairspec Extension provides SDKs for Python and TypeScript/JavaScript to make it easy to publish and consume Extension datasets.
 
 ## Python
 
 > [!NOTE]
-> In addition to the Python SDK, we recommend using [frictionless-py](https://framework.frictionlessdata.io/) to manage your data packages. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
+> In addition to the Python SDK, we recommend using [Fairspec Python](https://github.com/fairspec/fairspec-python) to manage your datasets. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
 
 ### Installation
 
 ```bash
-pip install extensiondp frictionless
+pip install fairspec-extension frictionless
 ```
 
 ### Publication
 
 ```python
-from extensiondp import Package, Table1, Table2
-import frictionless
+from fairspec_extension import Dataset, Table1, Table2
+from fairspec import saveDatasetDescriptor
 
 # Create Table1 records
 record1 = Table1(
@@ -47,61 +47,61 @@ record2 = Table2(
     isActive=True,
 )
 
-package = Package(
+dataset = Dataset(
     {
-        "$schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/profile.json",
+        "$schema": "https://datisthq.github.io/fairspec-extension/profiles/v0.1.5/dataset.json",
         "resources": [
             {
                 "name": "table1",
                 "data": [record1],
-                "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table1.json",
+                "tableSchema": "https://datisthq.github.io/fairspec-extension/schemas/v0.1.5/table1.json",
             },
             {
                 "name": "table2",
                 "data": [record2],
-                "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table2.json",
+                "tableSchema": "https://datisthq.github.io/fairspec-extension/schemas/v0.1.5/table2.json",
             },
         ],
     }
 )
 
-frictionless.Package(package).to_json("extension.json")
+saveDatasetDescriptor(dataset, path="dataset.json")
 ```
 
 ### Validation
 
 ```python
-import frictionless
+from fairspec import validateDataset
 
-report = frictionless.validate("extension.json")
+report = validateDataset("dataset.json")
 print(report)
 ```
 
 ### Consumption
 
 ```python
-import frictionless
+from fairspec import loadDatasetDescriptor
 
-package = frictionless.Package("extension.json")
-print(package)
+dataset = loadDatasetDescriptor("dataset.json")
+print(dataset)
 ```
 
 ## TypeScript
 
 > [!NOTE]
-> In addition to the TypeScript SDK, we recommend using [frictionless-ts](https://github.com/frictionlessdata/frictionless-ts) to manage your data packages. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
+> In addition to the TypeScript SDK, we recommend using [Fairspec TypeScript](https://github.com/fairspec/fairspec-typescript) to manage your datasets. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
 
 ### Installation
 
 ```bash
-npm install extensiondp frictionless-ts
+npm install fairspec fairspec-extension
 ```
 
 ### Publication
 
 ```typescript
-import type { Table1, Table2, Package } from "extensiondp";
-import { savePackageDescriptor } from "frictionless-ts";
+import type { Table1, Table2, Dataset } from "fairspec-extension";
+import { savePackageDescriptor } from "fairspec";
 
 const record1: Table1 = {
 	id: "t1-001",
@@ -125,27 +125,27 @@ const record2: Table2 = {
 	isActive: true,
 };
 
-const dataPackage: Package = {
+const dataset: Dataset = {
 	$schema:
-		"https://datisthq.github.io/extensiondp/extension/v0.1.5/profile.json",
+		"https://fairspec.github.io/fairspec-extension/profiles/v0.1.5/datast.json",
 	resources: [
 		{
 			name: "table1",
 			data: [record1],
-			schema:
-				"https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table1.json",
+			tableSchema:
+				"https://fairspec.github.io/fairspec-extension/schemas/v0.1.5/table1.json",
 		},
 		{
 			name: "table2",
 			data: [record2],
-			schema:
-				"https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table2.json",
+			tableSchema:
+				"https://fairspec.github.io/fairspec-extension/schemas/v0.1.5/table2.json",
 		},
 	],
 };
 
-await savePackageDescriptor(dataPackage, {
-	path: "extension.json",
+await saveDatasetDescriptor(dataset, {
+	path: "dataset.json",
 	overwrite: true,
 });
 ```
@@ -153,17 +153,17 @@ await savePackageDescriptor(dataPackage, {
 ### Validation
 
 ```typescript
-import { validatePackage } from "frictionless-ts";
+import { validateDataset } from "fairspec";
 
-const { valid, errors } = await validatePackage("extension.json");
+const { valid, errors } = await validateDataset("dataset.json");
 console.log(valid, errors);
 ```
 
 ### Consumption
 
 ```typescript
-import { loadPackageDescriptor } from "frictionless-ts";
+import { loadDatasetDescriptor } from "fairspec";
 
-const dataPackage = await loadPackageDescriptor("extension.json");
-console.log(dataPackage);
+const dataset = await loadDatasetDescriptor("dataset.json");
+console.log(dataset);
 ```

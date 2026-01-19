@@ -4,19 +4,19 @@ sidebar:
   order: 3
 ---
 
-This page provides examples of Extension DP files for different scenarios.
+This page provides examples of Fairspec Extension files for different scenarios.
 
-## Example 1: Simple Package with Inline Data
+## Example 1: Simple Dataset with Inline Data
 
 A basic example with two tables using inline data. Table2 records can optionally reference Table1 records via the `table1Id` foreign key.
 
 ```json
 {
-  "$schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/profile.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
       "data": [
         {
           "id": "t1-001",
@@ -41,7 +41,7 @@ A basic example with two tables using inline data. Table2 records can optionally
     },
     {
       "name": "table2",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
       "data": [
         {
           "id": "t2-001",
@@ -85,16 +85,16 @@ An example demonstrating the use of `path` instead of inline `data` to reference
 
 ```json
 {
-  "$schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/profile.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
       "path": "data/table1.csv"
     },
     {
       "name": "table2",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
       "path": "data/table2.csv"
     }
   ]
@@ -119,15 +119,15 @@ t2-003,,Independent Item,200.00,low,25,This item has no parent reference,false
 
 ## Example 3: Minimal Configuration
 
-A minimal valid Extension DP file with only required fields.
+A minimal valid Fairspec Extension file with only required fields.
 
 ```json
 {
-  "$schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/profile.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
       "data": [
         {
           "id": "t1-001",
@@ -141,7 +141,7 @@ A minimal valid Extension DP file with only required fields.
     },
     {
       "name": "table2",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
       "data": [
         {
           "id": "t2-001",
@@ -164,11 +164,11 @@ An example showing various constraint validations:
 
 ```json
 {
-  "$schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/profile.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
       "data": [
         {
           "id": "t1-999",
@@ -184,7 +184,7 @@ An example showing various constraint validations:
     },
     {
       "name": "table2",
-      "schema": "https://datisthq.github.io/extensiondp/extension/v0.1.5/schemas/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
       "data": [
         {
           "id": "t2-999",
