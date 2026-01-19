@@ -209,7 +209,7 @@ title: Table2
         </code>
       </td>
       <td>
-        <p>Whether the item is active</p>
+        <p>Whether the item is currently active</p>
       </td>
       <td>
         <code>boolean</code>

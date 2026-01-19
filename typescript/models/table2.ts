@@ -33,7 +33,7 @@ export interface Table2 {
    */
   notes?: string
   /**
-   * Whether the item is active
+   * Whether the item is currently active
    */
   isActive: boolean
 }

@@ -4,7 +4,7 @@ export type FairspecExtensionProfile = Dataset
 export type Resource = Table1Resource | Table2Resource
 
 export interface Dataset {
-  $schema: "https://fairspec.github.io/profiles/0.1.0/dataset.json"
+  $schema: "https://fairspec.github.io/profiles/0.1.1/dataset.json"
   /**
    * @minItems 1
    */
@@ -15,12 +15,12 @@ export interface Dataset {
  */
 export interface Table1Resource {
   name: "table1"
-  tableSchema: "https://fairspec.github.io/schemas/0.1.0/table1.json"
+  tableSchema: "https://fairspec.github.io/schemas/0.1.1/table1.json"
 }
 /**
  * Data items have to conform to the Table2 schema
  */
 export interface Table2Resource {
   name: "table2"
-  tableSchema: "https://fairspec.github.io/schemas/0.1.0/table2.json"
+  tableSchema: "https://fairspec.github.io/schemas/0.1.1/table2.json"
 }
