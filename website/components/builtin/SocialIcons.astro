@@ -1,6 +1,6 @@
 ---
 import Default from "@astrojs/starlight/components/SocialIcons.astro"
-import packageJson from "../package.json" with { type: "json" }
+import packageJson from "../../package.json" with { type: "json" }
 
 const { origin, hostname, pathname } = new URL(packageJson.homepage)
 const basedir = import.meta.env.PROD ? pathname : ""

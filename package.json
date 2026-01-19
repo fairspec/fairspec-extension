@@ -16,7 +16,7 @@
   "scripts": {
     "bump": "ncu -ws -u",
     "build:py": "uv --directory python build",
-    "build:ts": "pnpm -r build",
+    "build:ts": "pnpm -F typescript build",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
     "configure": "node @configure.ts",
     "generate": "node @generate.ts",
