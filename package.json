@@ -15,7 +15,7 @@
   },
   "scripts": {
     "bump": "ncu -ws -u",
-    "build:py": "uv --directory sdk-py build",
+    "build:py": "uv --directory python build",
     "build:ts": "pnpm -r build",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
     "configure": "node @configure.ts",
@@ -24,12 +24,12 @@
     "install:ci": "pnpm install --ignore-scripts",
     "lint": "biome check",
     "prepare": "husky",
-    "publish:py": "uv --directory sdk-py publish",
+    "publish:py": "uv --directory python publish",
     "publish:ts": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
     "start": "pnpm -F website start",
     "test": "pnpm lint && pnpm type",
     "type": "pnpm -r type",
-    "version:py": "uv --directory sdk-py version",
+    "version:py": "uv --directory python version",
     "version:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version"
   },
   "devDependencies": {
