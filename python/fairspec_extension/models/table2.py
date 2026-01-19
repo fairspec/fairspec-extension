@@ -38,5 +38,5 @@ class Table2(TypedDict):
     """
     isActive: bool
     """
-    Whether the item is currently active
+    Whether the item is active
     """

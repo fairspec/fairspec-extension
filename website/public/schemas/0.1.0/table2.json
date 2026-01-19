@@ -61,7 +61,7 @@
     },
     "isActive": {
       "type": "boolean",
-      "description": "Whether the item is currently active",
+      "description": "Whether the item is active",
       "examples": [true, false]
     }
   }
