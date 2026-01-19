@@ -65,7 +65,6 @@ jobs:
         uses: cycjimmy/semantic-release-action@v5
         id: release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
@@ -101,12 +100,12 @@ jobs:
       - name: Generate Packages
         if: needs.release.outputs.created == 'true'
         run: pnpm generate
-      - name: Build Site
-        run: pnpm -F extension build
+      - name: Build Website
+        run: pnpm -F website build
       - name: Upload Site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: extension/build
+          path: website/build
       - name: Deploy Site
         id: deployment
         uses: actions/deploy-pages@v4
