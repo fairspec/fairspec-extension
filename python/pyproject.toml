@@ -1,12 +1,16 @@
 [project]
 name = "fairspec-extension"
-version = "0.1.6"
+version = "0.1.0"
 description = "Fairspec Extension is a Git repository template for rapid Fairspec extension development"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
-classifiers = [ "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.12", "Topic :: Software Development :: Libraries :: Python Modules" ]
-dependencies = [ "typing-extensions>=4.15" ]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = ["typing-extensions>=4.15"]
 slug = "fairspec-extension"
 title = "Fairspec Extension"
 
@@ -14,9 +18,10 @@ title = "Fairspec Extension"
 name = "Evgeny Karev"
 
 [project.urls]
-repository = "https://github.com/fairspec/fairspec-extension"
 homepage = "https://fairspec.github.io/fairspec-extension"
+repository = "https://github.com/fairspec/fairspec-extension"
 
 [build-system]
-requires = [ "hatchling" ]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
+

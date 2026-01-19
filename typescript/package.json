@@ -1,7 +1,7 @@
 {
   "name": "fairspec-extension",
   "type": "module",
-  "version": "0.1.6",
+  "version": "0.1.0",
   "slug": "fairspec-extension",
   "title": "Fairspec Extension",
   "description": "Fairspec Extension is a Git repository template for rapid Fairspec extension development",
@@ -16,3 +16,4 @@
     "frictionless-ts": "^1.0.1"
   }
 }
+

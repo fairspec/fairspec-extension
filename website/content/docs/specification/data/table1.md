@@ -2,12 +2,11 @@
 title: Table1
 ---
 
-<p>An exemplar schema demonstrating various field types and constraints</p>
 <h2>Primary Key</h2>
 <p>
   <code>id</code>
 </p>
-<h2>Fields</h2>
+<h2>Columns</h2>
 <table>
   <colgroup>
     <col width="20%"/>
@@ -33,24 +32,8 @@ title: Table1
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             pattern:
             <code>^t1-[0-9]{3}$</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>t1-001</code>
-          </li>
-          <li>
-            <code>t1-002</code>
-          </li>
-          <li>
-            <code>t1-003</code>
           </li>
         </ul>
       </td>
@@ -69,25 +52,12 @@ title: Table1
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             minLength:
             <code>3</code>
           </li>
           <li>
             maxLength:
             <code>100</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>Example Entity</code>
-          </li>
-          <li>
-            <code>Sample Item</code>
           </li>
         </ul>
       </td>
@@ -106,10 +76,6 @@ title: Table1
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             enum:
             <code>active, inactive, pending</code>
           </li>
@@ -126,21 +92,9 @@ title: Table1
             <code>pending</code>
           </li>
         </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>active</code>
-          </li>
-          <li>
-            <code>inactive</code>
-          </li>
-          <li>
-            <code>pending</code>
-          </li>
-        </ul>
       </td>
       <td>
-        <code>string</code>
+        <code>categorical</code>
       </td>
     </tr>
     <tr>
@@ -154,24 +108,8 @@ title: Table1
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             minimum:
             <code>0</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>100.5</code>
-          </li>
-          <li>
-            <code>250.75</code>
-          </li>
-          <li>
-            <code>500</code>
           </li>
         </ul>
       </td>
@@ -198,18 +136,6 @@ title: Table1
             <code>1000</code>
           </li>
         </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>5</code>
-          </li>
-          <li>
-            <code>10</code>
-          </li>
-          <li>
-            <code>25</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>integer</code>
@@ -223,22 +149,6 @@ title: Table1
       </td>
       <td>
         <p>Whether the entity has been verified</p>
-        <strong>Constraints</strong>
-        <ul>
-          <li>
-            required:
-            <code>true</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>true</code>
-          </li>
-          <li>
-            <code>false</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>boolean</code>
@@ -252,22 +162,6 @@ title: Table1
       </td>
       <td>
         <p>Date when the entity was created</p>
-        <strong>Constraints</strong>
-        <ul>
-          <li>
-            required:
-            <code>true</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>2024-01-15</code>
-          </li>
-          <li>
-            <code>2024-03-20</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>date</code>
@@ -281,15 +175,6 @@ title: Table1
       </td>
       <td>
         <p>Optional description of the entity</p>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>This is a sample description</code>
-          </li>
-          <li>
-            <code>Additional notes about the entity</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>string</code>

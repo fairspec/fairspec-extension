@@ -7,7 +7,9 @@ import { replaceInFile } from "replace-in-file"
 import TOML from "smol-toml"
 import packageJson from "./package.json" with { type: "json" }
 
+process.chdir(import.meta.dirname)
 const loader = spinner()
+
 intro(pc.bold("Configuring the extension..."))
 
 const inputSlug = await text({

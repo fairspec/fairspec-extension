@@ -2,7 +2,6 @@
 title: Table2
 ---
 
-<p>An exemplar schema demonstrating foreign key relationships and additional constraints</p>
 <h2>Primary Key</h2>
 <p>
   <code>id</code>
@@ -16,9 +15,9 @@ title: Table2
   </colgroup>
   <thead>
     <tr>
-      <th>Fields</th>
+      <th>Columns</th>
       <th>Reference Resource</th>
-      <th>Reference Fields</th>
+      <th>Reference Columns</th>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +34,7 @@ title: Table2
     </tr>
   </tbody>
 </table>
-<h2>Fields</h2>
+<h2>Columns</h2>
 <table>
   <colgroup>
     <col width="20%"/>
@@ -61,24 +60,8 @@ title: Table2
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             pattern:
             <code>^t2-[0-9]{3}$</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>t2-001</code>
-          </li>
-          <li>
-            <code>t2-002</code>
-          </li>
-          <li>
-            <code>t2-003</code>
           </li>
         </ul>
       </td>
@@ -94,15 +77,6 @@ title: Table2
       </td>
       <td>
         <p>Reference to the parent table1 record. If not provided, the record is independent</p>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>t1-001</code>
-          </li>
-          <li>
-            <code>t1-002</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>string</code>
@@ -119,28 +93,12 @@ title: Table2
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             minLength:
             <code>1</code>
           </li>
           <li>
             maxLength:
             <code>200</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>First Item</code>
-          </li>
-          <li>
-            <code>Second Item</code>
-          </li>
-          <li>
-            <code>Sample Entry</code>
           </li>
         </ul>
       </td>
@@ -159,24 +117,8 @@ title: Table2
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             minimum:
             <code>0</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>99.99</code>
-          </li>
-          <li>
-            <code>150.5</code>
-          </li>
-          <li>
-            <code>2500</code>
           </li>
         </ul>
       </td>
@@ -195,10 +137,6 @@ title: Table2
         <strong>Constraints</strong>
         <ul>
           <li>
-            required:
-            <code>true</code>
-          </li>
-          <li>
             enum:
             <code>low, medium, high</code>
           </li>
@@ -215,21 +153,9 @@ title: Table2
             <code>high</code>
           </li>
         </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>low</code>
-          </li>
-          <li>
-            <code>medium</code>
-          </li>
-          <li>
-            <code>high</code>
-          </li>
-        </ul>
       </td>
       <td>
-        <code>string</code>
+        <code>categorical</code>
       </td>
     </tr>
     <tr>
@@ -248,21 +174,6 @@ title: Table2
           </li>
           <li>
             maximum:
-            <code>100</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>25.5</code>
-          </li>
-          <li>
-            <code>50</code>
-          </li>
-          <li>
-            <code>75.25</code>
-          </li>
-          <li>
             <code>100</code>
           </li>
         </ul>
@@ -286,15 +197,6 @@ title: Table2
             <code>500</code>
           </li>
         </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>This is a note</code>
-          </li>
-          <li>
-            <code>Additional information here</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>string</code>
@@ -308,22 +210,6 @@ title: Table2
       </td>
       <td>
         <p>Whether the item is currently active</p>
-        <strong>Constraints</strong>
-        <ul>
-          <li>
-            required:
-            <code>true</code>
-          </li>
-        </ul>
-        <strong>Examples</strong>
-        <ul>
-          <li>
-            <code>true</code>
-          </li>
-          <li>
-            <code>false</code>
-          </li>
-        </ul>
       </td>
       <td>
         <code>boolean</code>
