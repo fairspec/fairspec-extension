@@ -28,7 +28,7 @@
     "publish:ts": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
     "start": "pnpm -F website start",
     "test": "pnpm lint && pnpm type",
-    "type": "tsc --noEmit",
+    "type": "pnpm -r type",
     "version:py": "uv --directory sdk-py version",
     "version:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version"
   },

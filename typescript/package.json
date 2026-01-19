@@ -10,7 +10,8 @@
   "author": "Evgeny Karev",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "type": "tsc --noEmit"
   },
   "dependencies": {
     "@fairspec/metadata": "^0.2.2"

@@ -12,7 +12,8 @@
   "scripts": {
     "build": "astro build",
     "preview": "astro preview --port 5000",
-    "start": "astro dev --port 5000"
+    "start": "astro dev --port 5000",
+    "type": "echo 'Enable tsc --noEmit'"
   },
   "devDependencies": {
     "@astrojs/starlight": "0.36.0",

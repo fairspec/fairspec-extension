@@ -1,4 +1,4 @@
-import type * as standard from "@fairspect/metadata"
+import type * as standard from "@fairspec/metadata"
 import type * as extension from "./models/dataset.ts"
 
 export type Resource = standard.Resource & extension.Resource
