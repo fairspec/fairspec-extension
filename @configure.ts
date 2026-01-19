@@ -5,15 +5,15 @@ import pc from "picocolors"
 import { remark } from "remark"
 import { replaceInFile } from "replace-in-file"
 import TOML from "smol-toml"
-import metadata from "./package.json" with { type: "json" }
+import packageJson from "./package.json" with { type: "json" }
 
 const loader = spinner()
 intro(pc.bold("Configuring the extension..."))
 
 const inputSlug = await text({
   message: "Provide a slug for your extension",
-  placeholder: "extensiondp",
-  initialValue: metadata.slug,
+  placeholder: "fairspec-extension",
+  initialValue: packageJson.slug,
   validate(value) {
     if (value.length === 0) return "Title is required!"
     return undefined
@@ -22,8 +22,8 @@ const inputSlug = await text({
 
 const inputTitle = await text({
   message: "Provide a title for your extension",
-  placeholder: "Extension DP",
-  initialValue: metadata.title,
+  placeholder: "Fairspec Extension",
+  initialValue: packageJson.title,
   validate(value) {
     if (value.length === 0) return "Title is required!"
     return undefined
@@ -33,7 +33,7 @@ const inputTitle = await text({
 const inputDescription = await text({
   message: "Provide a description for your extension",
   placeholder: "A data package extension for...",
-  initialValue: metadata.description,
+  initialValue: packageJson.description,
   validate(value) {
     if (value.length === 0) return "Description is required!"
     return undefined
@@ -42,8 +42,8 @@ const inputDescription = await text({
 
 const inputRepository = await text({
   message: "Provide a repository URL for your extension",
-  placeholder: "https://github.com/datisthq/extensiondp",
-  initialValue: metadata.repository,
+  placeholder: "https://github.com/fairspec/fairspec-extension",
+  initialValue: packageJson.repository,
   validate(value) {
     if (value.length === 0) return "Repository is required!"
     return undefined
@@ -52,8 +52,8 @@ const inputRepository = await text({
 
 const inputHomepage = await text({
   message: "Provide a homepage URL for your extension",
-  placeholder: "https://extensiondp.datist.io",
-  initialValue: metadata.homepage,
+  placeholder: "https://fairspec.github.io/fairspec-extension/",
+  initialValue: packageJson.homepage,
   validate(value) {
     if (value.length === 0) return "Homepage is required!"
     return undefined
@@ -62,33 +62,33 @@ const inputHomepage = await text({
 
 const inputAuthor = await text({
   message: "Provide an extension author",
-  placeholder: "Datist",
-  initialValue: metadata.author,
+  placeholder: "Evgeny Karev",
+  initialValue: packageJson.author,
   validate(value) {
     if (value.length === 0) return "Author is required!"
     return undefined
   },
 })
 
-const slug = isCancel(inputSlug) ? metadata.slug : inputSlug
-const title = isCancel(inputTitle) ? metadata.title : inputTitle
+const slug = isCancel(inputSlug) ? packageJson.slug : inputSlug
+const title = isCancel(inputTitle) ? packageJson.title : inputTitle
 const description = isCancel(inputDescription)
-  ? metadata.description
+  ? packageJson.description
   : inputDescription
 const repository = isCancel(inputRepository)
-  ? metadata.repository
+  ? packageJson.repository
   : inputRepository
-const homepage = isCancel(inputHomepage) ? metadata.homepage : inputHomepage
-const author = isCancel(inputAuthor) ? metadata.author : inputAuthor
+const homepage = isCancel(inputHomepage) ? packageJson.homepage : inputHomepage
+const author = isCancel(inputAuthor) ? packageJson.author : inputAuthor
 
 if (title || description || repository) {
   loader.start("Updating the extension...")
 
   await replaceInFile({
     files: [
-      "extension/README.md",
-      "sdk-py/README.md",
-      "sdk-ts/README.md",
+      "python/README.md",
+      "typescript/README.md",
+      "website/README.md",
       "README.md",
     ],
     processor: source => {
@@ -142,11 +142,11 @@ if (title || description || repository) {
   })
 
   await replaceInFile({
-    files: ["extension/package.json", "sdk-ts/package.json", "package.json"],
+    files: ["typescript/package.json", "website/package.json", "package.json"],
     processor: (source, file) => {
       const data = JSON.parse(source) as any
 
-      if (file.includes("sdk-ts")) {
+      if (file.includes("typescript")) {
         if (slug) data.name = slug
       }
 
@@ -163,7 +163,7 @@ if (title || description || repository) {
   })
 
   await replaceInFile({
-    files: ["sdk-py/pyproject.toml"],
+    files: ["python/pyproject.toml"],
     processor: source => {
       const data = TOML.parse(source) as any
 
@@ -180,9 +180,9 @@ if (title || description || repository) {
   })
 
   // Rename the Python package directory
-  const sdkPath = "sdk-py"
-  const oldPath = join(sdkPath, metadata.slug)
-  const newPath = join(sdkPath, slug)
+  const sdkPath = "python"
+  const oldPath = join(sdkPath, packageJson.slug.replace("-", "_"))
+  const newPath = join(sdkPath, slug.replace("-", "_"))
   await rename(oldPath, newPath)
 
   loader.stop("Extension is updated!")
