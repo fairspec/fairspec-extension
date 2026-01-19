@@ -19,14 +19,12 @@ export default defineConfig({
     starlight({
       title: metadata.title,
       description: metadata.description,
-      customCss: ["/assets/styles.css"],
+      customCss: ["/styles/general.css"],
       components: {
-        SocialIcons: "./components/SocialIcons.astro",
+        SocialIcons: "./components/builtin/SocialIcons.astro",
       },
       logo: {
-        light: "/assets/logo-light.svg",
-        dark: "/assets/logo-dark.svg",
-        replacesTitle: false,
+        src: "/assets/fairspec-logo.svg",
         alt: "Logo",
       },
       social: [
@@ -36,7 +34,7 @@ export default defineConfig({
           href: metadata.repository,
         },
       ],
-      favicon: "favicon.svg",
+      favicon: "fairspec-logo.png",
       editLink: {
         baseUrl: `${metadata.repository}/edit/main`,
       },

@@ -1,3 +1,3 @@
 # Fairspec Extension
 
-Fairspec Extension is a Git repository template for rapid Fairspec extension development.
+Fairspec Extension is a Git repository template for rapid Fairspec extension development
