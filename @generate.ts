@@ -8,6 +8,7 @@ import { replaceInFile } from "replace-in-file"
 import metadata from "./package.json" with { type: "json" }
 
 // TODO: Use zod/pydantic for generated models
+// https://github.com/glideapps/quicktype
 
 process.chdir(import.meta.dirname)
 const $ = execa({ stdout: ["inherit", "pipe"], preferLocal: true })
@@ -103,7 +104,6 @@ for (const file of await readdir("website/schemas")) {
 await writeFile(`typescript/models/index.ts`, `${typescriptIndex.join("\n")}\n`)
 
 loader.stop("TypeScript updated!")
-process.exit()
 
 // Python
 
@@ -112,12 +112,12 @@ loader.start("Updating Python")
 await $({ shell: true })`
 jq
 '.allOf |= .[1:]'
-extension/profile.json
+website/profiles/dataset.json
 | uvx
 --from datamodel-code-generator@0.34.0
 datamodel-codegen
 --input-file-type jsonschema
---output sdk-py/${metadata.slug}/profile.py
+--output python/${metadata.slug.replace("-", "_")}/models/dataset.py
 --output-model-type typing.TypedDict
 --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
 --use-generic-container-types
@@ -127,26 +127,24 @@ datamodel-codegen
 
 // It fixes a weird bug of schema -> schema_ conversion
 await replaceInFile({
-  files: [`sdk-py/${metadata.slug}/profile.py`],
+  files: [`python/${metadata.slug.replace("-", "_")}/models/dataset.py`],
   from: /schema_:/g,
   to: "schema:",
 })
 
-const pythonIndex: string[] = []
-for (const file of await readdir("extension/schemas")) {
-  const name = basename(file, extname(file))
+const pythonIndex: string[] = ["from .dataset import *"]
+for (const file of await readdir("website/schemas")) {
+  const name = nodePath.basename(file, nodePath.extname(file))
   pythonIndex.push(`from .${name} import *`)
 
   await $({ shell: true })`
-  dpkit schema convert
-  extension/schemas/${file}
-  --to-format jsonschema
-  --silent
+  cat
+  website/schemas/${file}
   | uvx
   --from datamodel-code-generator@0.34.0
   datamodel-codegen
   --input-file-type jsonschema
-  --output sdk-py/${metadata.slug}/schemas/${name}.py
+  --output python/${metadata.slug.replace("-", "_")}/models/${name}.py
   --output-model-type typing.TypedDict
   --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
   --use-generic-container-types
@@ -156,7 +154,7 @@ for (const file of await readdir("extension/schemas")) {
 }
 
 await writeFile(
-  `${root}/sdk-py/${metadata.slug}/schemas/__init__.py`,
+  `python/${metadata.slug.replace("-", "_")}/models/__init__.py`,
   pythonIndex.join("\n"),
 )
 

@@ -1,6 +1,6 @@
 from .profile import Package
 from .profile import Resource
 
-from .schemas import *
+from .models import *
 
-__all__ = ["Package", "Resource"]
+__all__ = ["Dataset", "Resource"]

@@ -13,6 +13,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@fairspect/metadata": "^0.2.2"
+    "@fairspec/metadata": "^0.2.2"
   }
 }

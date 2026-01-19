@@ -16,9 +16,7 @@
         "resources": {
           "type": "array",
           "minItems": 1,
-          "items": {
-            "$ref": "#/$defs/Resource"
-          }
+          "items": { "$ref": "#/$defs/Resource" }
         }
       }
     },

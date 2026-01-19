@@ -7,25 +7,25 @@ from typing import Literal, Sequence, TypedDict, Union
 
 class Table1Resource(TypedDict):
     name: Literal['table1']
-    schema: Literal['https://datisthq.github.io/extension/v0.1.6/schemas/table1.json']
+    tableSchema: Literal['https://fairspec.github.io/schemas/0.1.0/table1.json']
 
 
 class Table2Resource(TypedDict):
     name: Literal['table2']
-    schema: Literal['https://datisthq.github.io/extension/v0.1.6/schemas/table2.json']
+    tableSchema: Literal['https://fairspec.github.io/schemas/0.1.0/table2.json']
 
 
 Resource = Union[Table1Resource, Table2Resource]
 
 
-Package = TypedDict(
-    'Package',
+Dataset = TypedDict(
+    'Dataset',
     {
-        '$schema': Literal['https://datisthq.github.io/extension/v0.1.6/profile.json'],
+        '$schema': Literal['https://fairspec.github.io/profiles/0.1.0/dataset.json'],
         'resources': Sequence[Resource],
     },
 )
 
 
-class ExtensionDataPackageProfile(Package):
+class FairspecExtensionProfile(Dataset):
     pass
