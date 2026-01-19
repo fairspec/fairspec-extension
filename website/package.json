@@ -1,0 +1,25 @@
+{
+  "name": "extension",
+  "type": "module",
+  "version": "0.1.6",
+  "private": true,
+  "slug": "extensiondp",
+  "title": "Extension DP",
+  "description": "Extension DP (Data Package Extension Template) is a Git repository template for rapid Data Package extension development",
+  "repository": "https://github.com/frictionlessdata/extensiondp",
+  "homepage": "https://frictionlessdata.github.io/extensiondp",
+  "author": "Evgeny Karev",
+  "scripts": {
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "devDependencies": {
+    "@astrojs/starlight": "0.36.0",
+    "astro": "5.14.1",
+    "sharp": "0.34.2",
+    "starlight-changelogs": "0.2.1",
+    "starlight-github-alerts": "0.1.0",
+    "starlight-scroll-to-top": "0.4.0"
+  }
+}

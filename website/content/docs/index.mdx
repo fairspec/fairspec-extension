@@ -1,0 +1,51 @@
+---
+title: Extension DP
+template: splash
+editUrl: false
+lastUpdated: false
+hero:
+  tagline: |
+    Extension DP (Data Package Extension Template) is a <strong>Git repository template</strong> for rapid <strong>Data Package extension</strong> development.
+  image:
+    file: ../../assets/hero.png
+    alt: Illustration
+  actions:
+    - text: Get Started
+      link: overview/format/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/datisthq/extensiondp
+      icon: external
+      variant: minimal
+---
+
+import { CardGrid, LinkCard, Card } from "@astrojs/starlight/components"
+
+<h2>Features</h2>
+
+<CardGrid>
+  <Card title="Simple" icon="rocket">
+    Publish a data package extension in minutes, without the need for coding. Generate Python and TypeScript SDKs automatically.
+  </Card>
+  <Card title="Modern" icon="document">
+    The extension template use the latest version of the Data Package Standard (v2), allowing to implement basically any business domain logic.
+  </Card>
+  <Card title="Standard" icon="open-book">
+    The extension template is based on the widely-used Data Package standard, making it compatible with its software ecosystem.
+  </Card>
+  <Card title="Automatic" icon="laptop">
+    The extension template generates and publishes Python and TypeScript SDKs, simplifying the end-user experience of publishing and consuming data packages.
+  </Card>
+</CardGrid>
+
+<div style="margin-bottom: 5em"></div>
+
+<h2>Documentation</h2>
+
+<CardGrid>
+  <LinkCard title="Format" href="overview/format/" />
+  <LinkCard title="Examples" href="overview/examples/" />
+  <LinkCard title="Specification" href="specification/metadata/" />
+  <LinkCard title="Changelog" href="changelog/" />
+</CardGrid>

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Table1",
+  "description": "An exemplar schema demonstrating various field types and constraints",
+  "primaryKey": ["id"],
+  "fieldsMatch": "equal",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Unique identifier for the record",
+      "examples": ["t1-001", "t1-002", "t1-003"],
+      "constraints": {
+        "required": true,
+        "pattern": "^t1-[0-9]{3}$"
+      }
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the entity",
+      "examples": ["Example Entity", "Sample Item"],
+      "constraints": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100
+      }
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Current status of the entity",
+      "examples": ["active", "inactive", "pending"],
+      "categories": ["active", "inactive", "pending"],
+      "constraints": {
+        "required": true,
+        "enum": ["active", "inactive", "pending"]
+      }
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "description": "Numeric value associated with the entity",
+      "examples": [100.5, 250.75, 500],
+      "constraints": {
+        "required": true,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "itemCount",
+      "type": "integer",
+      "description": "Count of items",
+      "examples": [5, 10, 25],
+      "constraints": {
+        "minimum": 0,
+        "maximum": 1000
+      }
+    },
+    {
+      "name": "isVerified",
+      "type": "boolean",
+      "description": "Whether the entity has been verified",
+      "examples": [true, false],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "createdDate",
+      "type": "date",
+      "description": "Date when the entity was created",
+      "examples": ["2024-01-15", "2024-03-20"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Optional description of the entity",
+      "examples": [
+        "This is a sample description",
+        "Additional notes about the entity"
+      ]
+    }
+  ]
+}

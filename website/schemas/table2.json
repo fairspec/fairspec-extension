@@ -1,0 +1,94 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Table2",
+  "description": "An exemplar schema demonstrating foreign key relationships and additional constraints",
+  "primaryKey": ["id"],
+  "fieldsMatch": "equal",
+  "foreignKeys": [
+    {
+      "fields": ["table1Id"],
+      "reference": {
+        "resource": "table1",
+        "fields": ["id"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Unique identifier for the record",
+      "examples": ["t2-001", "t2-002", "t2-003"],
+      "constraints": {
+        "required": true,
+        "pattern": "^t2-[0-9]{3}$"
+      }
+    },
+    {
+      "name": "table1Id",
+      "type": "string",
+      "description": "Reference to the parent table1 record. If not provided, the record is independent",
+      "examples": ["t1-001", "t1-002"]
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Title or name of the item",
+      "examples": ["First Item", "Second Item", "Sample Entry"],
+      "constraints": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 200
+      }
+    },
+    {
+      "name": "amount",
+      "type": "number",
+      "description": "Monetary or numeric amount",
+      "examples": [99.99, 150.5, 2500],
+      "constraints": {
+        "required": true,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "priority",
+      "type": "string",
+      "description": "Priority level of the item",
+      "examples": ["low", "medium", "high"],
+      "categories": ["low", "medium", "high"],
+      "constraints": {
+        "required": true,
+        "enum": ["low", "medium", "high"]
+      }
+    },
+    {
+      "name": "percentage",
+      "type": "number",
+      "description": "Percentage value between 0 and 100",
+      "examples": [25.5, 50, 75.25, 100],
+      "constraints": {
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    {
+      "name": "notes",
+      "type": "string",
+      "description": "Additional notes or comments",
+      "examples": ["This is a note", "Additional information here"],
+      "constraints": {
+        "maxLength": 500
+      }
+    },
+    {
+      "name": "isActive",
+      "type": "boolean",
+      "description": "Whether the item is currently active",
+      "examples": [true, false],
+      "constraints": {
+        "required": true
+      }
+    }
+  ]
+}

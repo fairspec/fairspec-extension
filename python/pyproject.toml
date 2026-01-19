@@ -1,0 +1,22 @@
+[project]
+name = "extensiondp"
+version = "0.1.6"
+description = "Extension DP (Data Package Extension Template) is a Git repository template for rapid Data Package extension development"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+classifiers = [ "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.12", "Topic :: Software Development :: Libraries :: Python Modules" ]
+dependencies = [ "typing-extensions>=4.15" ]
+slug = "extensiondp"
+title = "Extension DP"
+
+[[project.authors]]
+name = "Evgeny Karev"
+
+[project.urls]
+repository = "https://github.com/frictionlessdata/extensiondp"
+homepage = "https://frictionlessdata.github.io/extensiondp"
+
+[build-system]
+requires = [ "hatchling" ]
+build-backend = "hatchling.build"
