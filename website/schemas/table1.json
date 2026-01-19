@@ -1,82 +1,56 @@
 {
-  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "$schema": "https://fairspec.org/profiles/latest/table.json",
   "title": "Table1",
   "description": "An exemplar schema demonstrating various field types and constraints",
   "primaryKey": ["id"],
-  "fieldsMatch": "equal",
-  "fields": [
-    {
-      "name": "id",
+  "required": ["id", "name", "status", "value", "isVerified", "createdDate"],
+  "properties": {
+    "id": {
       "type": "string",
       "description": "Unique identifier for the record",
       "examples": ["t1-001", "t1-002", "t1-003"],
-      "constraints": {
-        "required": true,
-        "pattern": "^t1-[0-9]{3}$"
-      }
+      "pattern": "^t1-[0-9]{3}$"
     },
-    {
-      "name": "name",
+    "name": {
       "type": "string",
       "description": "Name of the entity",
       "examples": ["Example Entity", "Sample Item"],
-      "constraints": {
-        "required": true,
-        "minLength": 3,
-        "maxLength": 100
-      }
+      "minLength": 3,
+      "maxLength": 100
     },
-    {
-      "name": "status",
+    "status": {
       "type": "string",
+      "format": "categorical",
       "description": "Current status of the entity",
       "examples": ["active", "inactive", "pending"],
       "categories": ["active", "inactive", "pending"],
-      "constraints": {
-        "required": true,
-        "enum": ["active", "inactive", "pending"]
-      }
+      "enum": ["active", "inactive", "pending"]
     },
-    {
-      "name": "value",
+    "value": {
       "type": "number",
       "description": "Numeric value associated with the entity",
       "examples": [100.5, 250.75, 500],
-      "constraints": {
-        "required": true,
-        "minimum": 0
-      }
+      "minimum": 0
     },
-    {
-      "name": "itemCount",
+    "itemCount": {
       "type": "integer",
       "description": "Count of items",
       "examples": [5, 10, 25],
-      "constraints": {
-        "minimum": 0,
-        "maximum": 1000
-      }
+      "minimum": 0,
+      "maximum": 1000
     },
-    {
-      "name": "isVerified",
+    "isVerified": {
       "type": "boolean",
       "description": "Whether the entity has been verified",
-      "examples": [true, false],
-      "constraints": {
-        "required": true
-      }
+      "examples": [true, false]
     },
-    {
-      "name": "createdDate",
-      "type": "date",
+    "createdDate": {
+      "type": "string",
+      "format": "date",
       "description": "Date when the entity was created",
-      "examples": ["2024-01-15", "2024-03-20"],
-      "constraints": {
-        "required": true
-      }
+      "examples": ["2024-01-15", "2024-03-20"]
     },
-    {
-      "name": "description",
+    "description": {
       "type": "string",
       "description": "Optional description of the entity",
       "examples": [
@@ -84,5 +58,5 @@
         "Additional notes about the entity"
       ]
     }
-  ]
+  }
 }
