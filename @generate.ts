@@ -74,8 +74,6 @@ await tasuku("Updating TypeScript", async () => {
   website/profiles/dataset.json
   | json2ts
   --additionalProperties false
-  --bannerComment '// biome-ignore-all format: DO NOT UPDATE this @generated file'
-  --no-style.semi
   > typescript/models/dataset.ts
   `
 
@@ -102,8 +100,6 @@ await tasuku("Updating TypeScript", async () => {
     website/schemas/${file}
     | json2ts
     --additionalProperties false
-    --bannerComment '// biome-ignore-all format: DO NOT UPDATE this @generated file'
-    --no-style.semi
     > typescript/models/${basename}.ts
     `
 
@@ -125,6 +121,12 @@ await tasuku("Updating TypeScript", async () => {
   for file in typescript/models/*.ts;
   do grep -oP '^export const \\K[A-Z]\\w+' "$file" | while read name;
   do echo "export type $name = z.infer<typeof $name>"; done >> "$file"; done
+  `
+
+  await shell`
+  sed -i
+  '1s|.*|// biome-ignore-all format: DO NOT UPDATE this @generated file|g'
+  typescript/models/*.ts
   `
 
   await writeFile(
