@@ -14,7 +14,7 @@ Fairspec Extension provides SDKs for Python and TypeScript/JavaScript to make it
 ### Installation
 
 ```bash
-pip install fairspec-extension frictionless
+pip install fairspec fairspec-extension
 ```
 
 ### Publication
