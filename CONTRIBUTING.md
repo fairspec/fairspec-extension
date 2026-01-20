@@ -46,10 +46,10 @@ pnpm start
 
 The fiels you need to edit to update the extension:
 
-- **extension/profile.json** - Edit the profile to model your dataset
-- **extension/schemas/** - Edit the schemas to model your data tables
-- **extension/content/docs/index.mdx** - Edit the homepage
-- **extension/content/docs/overview/** - Edit not generated documentation pages
+- **website/profiles/** - Edit the profile to model your dataset
+- **website/schemas/** - Edit the schemas to model your data tables
+- **website/content/docs/index.mdx** - Edit the homepage
+- **website/content/docs/overview/** - Edit not generated documentation pages
 
 The rest of the files are generic or generated and should not be edited directly unless you want a more granular control over the extension development.
 
