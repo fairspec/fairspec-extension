@@ -19,3 +19,8 @@ export const Dataset = z.object({
 });
 
 export const FairspecExtensionProfile = Dataset;
+export type Table1Resource = z.infer<typeof Table1Resource>
+export type Table2Resource = z.infer<typeof Table2Resource>
+export type Resource = z.infer<typeof Resource>
+export type Dataset = z.infer<typeof Dataset>
+export type FairspecExtensionProfile = z.infer<typeof FairspecExtensionProfile>

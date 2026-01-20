@@ -11,3 +11,4 @@ export const Table1 = z.object({
     createdDate: z.string(),
     description: z.string().optional()
 });
+export type Table1 = z.infer<typeof Table1>

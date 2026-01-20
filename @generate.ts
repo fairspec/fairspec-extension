@@ -121,6 +121,12 @@ await tasuku("Updating TypeScript", async () => {
     `
   }
 
+  await shell`
+  for file in typescript/models/*.ts;
+  do grep -oP '^export const \\K[A-Z]\\w+' "$file" | while read name;
+  do echo "export type $name = z.infer<typeof $name>"; done >> "$file"; done
+  `
+
   await writeFile(
     `typescript/models/index.ts`,
     `${typescriptIndex.join("\n")}\n`,

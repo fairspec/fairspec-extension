@@ -11,3 +11,4 @@ export const Table2 = z.object({
     notes: z.string().optional(),
     isActive: z.boolean()
 });
+export type Table2 = z.infer<typeof Table2>
