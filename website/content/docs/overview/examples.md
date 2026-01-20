@@ -12,11 +12,11 @@ A basic example with two tables using inline data. Table2 records can optionally
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.2.2/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table1.json",
       "data": [
         {
           "id": "t1-001",
@@ -41,7 +41,7 @@ A basic example with two tables using inline data. Table2 records can optionally
     },
     {
       "name": "table2",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table2.json",
       "data": [
         {
           "id": "t2-001",
@@ -85,16 +85,16 @@ An example demonstrating the use of `path` instead of inline `data` to reference
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.2.2/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table1.json",
       "path": "data/table1.csv"
     },
     {
       "name": "table2",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table2.json",
       "path": "data/table2.csv"
     }
   ]
@@ -123,11 +123,11 @@ A minimal valid Fairspec Extension file with only required fields.
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.2.2/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table1.json",
       "data": [
         {
           "id": "t1-001",
@@ -141,7 +141,7 @@ A minimal valid Fairspec Extension file with only required fields.
     },
     {
       "name": "table2",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table2.json",
       "data": [
         {
           "id": "t2-001",
@@ -164,11 +164,11 @@ An example showing various constraint validations:
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.1.5/dataset.json",
+  "$schema": "https://fairspec.github.io/fairspec-extension/profiles/0.2.2/dataset.json",
   "resources": [
     {
       "name": "table1",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table1.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table1.json",
       "data": [
         {
           "id": "t1-999",
@@ -184,7 +184,7 @@ An example showing various constraint validations:
     },
     {
       "name": "table2",
-      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.1.5/table2.json",
+      "tableSchema": "https://fairspec.github.io/fairspec-extension/schemas/0.2.2/table2.json",
       "data": [
         {
           "id": "t2-999",
