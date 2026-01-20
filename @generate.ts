@@ -7,6 +7,8 @@ import pc from "picocolors"
 import { replaceInFile } from "replace-in-file"
 import metadata from "./package.json" with { type: "json" }
 
+// TODO: Move some actions to @fairspec/extension?
+
 // TODO: Use zod/pydantic for generated models
 // https://github.com/glideapps/quicktype
 
@@ -60,13 +62,17 @@ $`rm -rf website/public/schemas/${metadata.version}`
 $`mkdir -p website/public/profiles/${metadata.version}`
 $`mkdir -p website/public/schemas/${metadata.version}`
 
-$({
-  shell: true,
-})`cp website/profiles/*.json website/public/profiles/${metadata.version}`
+$({ shell: true })`
+cp
+website/profiles/*.json
+website/public/profiles/${metadata.version}
+`
 
-$({
-  shell: true,
-})`cp website/schemas/*.json website/public/schemas/${metadata.version}`
+$({ shell: true })`
+cp
+website/schemas/*.json
+website/public/schemas/${metadata.version}
+`
 
 loader.stop("Website updated!")
 
@@ -85,6 +91,13 @@ website/profiles/dataset.json
 > typescript/models/dataset.ts
 `
 
+await $({ stdout: ["pipe"] })`
+ts-to-zod
+typescript/models/dataset.ts
+typescript/models/dataset.ts
+--skipValidation
+`
+
 const typescriptIndex: string[] = ['export * from "./dataset.ts"']
 for (const file of await readdir("website/schemas")) {
   const basename = nodePath.basename(file, nodePath.extname(file))
@@ -99,11 +112,19 @@ for (const file of await readdir("website/schemas")) {
   --no-style.semi
   > typescript/models/${basename}.ts
   `
+
+  await $({ stdout: ["pipe"] })`
+  ts-to-zod
+  typescript/models/${basename}.ts
+  typescript/models/${basename}.ts
+  --skipValidation
+  `
 }
 
 await writeFile(`typescript/models/index.ts`, `${typescriptIndex.join("\n")}\n`)
 
 loader.stop("TypeScript updated!")
+process.exit(0)
 
 // Python
 

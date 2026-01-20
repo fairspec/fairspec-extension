@@ -14,6 +14,7 @@
     "type": "tsc --noEmit"
   },
   "dependencies": {
-    "@fairspec/metadata": "^0.2.2"
+    "@fairspec/metadata": "^0.2.2",
+    "zod": "^4.3.5"
   }
 }
