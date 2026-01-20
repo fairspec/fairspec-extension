@@ -17,8 +17,8 @@
         "message": "release: v${nextRelease.version}",
         "assets": [
           "website/package.json",
-          "website/profile.json",
-          "website/schemas/*.json",
+          "website/public/profiles/*.json",
+          "website/public/schemas/*.json",
           "website/content/docs/specification/metadata.md",
           "website/content/docs/specification/data/*.md",
           "python/pyproject.toml",

@@ -1,7 +1,6 @@
 import { rename } from "node:fs/promises"
 import { join } from "node:path"
 import { intro, isCancel, outro, spinner, text } from "@clack/prompts"
-import pc from "picocolors"
 import { remark } from "remark"
 import { replaceInFile } from "replace-in-file"
 import TOML from "smol-toml"
@@ -10,7 +9,7 @@ import packageJson from "./package.json" with { type: "json" }
 process.chdir(import.meta.dirname)
 const loader = spinner()
 
-intro(pc.bold("Configuring the extension..."))
+intro("Configuring the extension...")
 
 const inputSlug = await text({
   message: "Provide a slug for your extension",

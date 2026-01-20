@@ -1,5 +1,5 @@
 {
-  "name": "fairspec-extension",
+  "name": "project",
   "type": "module",
   "version": "0.1.1",
   "private": true,
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "8.0.6",
-    "@biomejs/biome": "2.2.5",
+    "@biomejs/biome": "2.3.11",
     "@clack/prompts": "0.11.0",
     "@semantic-release/exec": "7.1.0",
     "@types/node": "24.5.2",
@@ -42,17 +42,16 @@
     "execa": "9.6.0",
     "fairspec": "0.2.2",
     "husky": "9.1.7",
-    "json-schema-doc-ts": "2.0.0",
     "json-schema-to-typescript": "15.0.4",
-    "json-schema-to-zod": "2.7.0",
     "npkill": "0.12.2",
     "npm-check-updates": "18.0.1",
-    "picocolors": "1.1.1",
     "quicktype": "23.2.6",
     "remark": "15.0.1",
     "replace-in-file": "8.3.0",
     "semantic-release": "24.2.9",
     "smol-toml": "1.4.2",
+    "tasuku": "2.0.5",
+    "ts-to-zod": "5.1.0",
     "typescript": "5.9.2"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"

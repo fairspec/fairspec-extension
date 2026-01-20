@@ -1,26 +1,26 @@
 // biome-ignore-all format: DO NOT UPDATE this @generated file
+import { z } from "zod";
 
-export type FairspecExtensionProfile = Dataset
-export type Resource = Table1Resource | Table2Resource
+export const Table1Resource = z.object({
+    name: z.literal("table1"),
+    Table: z.literal("https://fairspec.github.io/schemas/0.1.1/table1.json")
+});
 
-export interface Dataset {
-  $schema: "https://fairspec.github.io/profiles/0.1.1/dataset.json"
-  /**
-   * @minItems 1
-   */
-  resources: [Resource, ...Resource[]]
-}
-/**
- * Data records have to conform to the Table1 schema
- */
-export interface Table1Resource {
-  name: "table1"
-  tableSchema: "https://fairspec.github.io/schemas/0.1.1/table1.json"
-}
-/**
- * Data items have to conform to the Table2 schema
- */
-export interface Table2Resource {
-  name: "table2"
-  tableSchema: "https://fairspec.github.io/schemas/0.1.1/table2.json"
-}
+export const Table2Resource = z.object({
+    name: z.literal("table2"),
+    Table: z.literal("https://fairspec.github.io/schemas/0.1.1/table2.json")
+});
+
+export const Resource = z.union([Table1Resource, Table2Resource]);
+
+export const Dataset = z.object({
+    $schema: z.literal("https://fairspec.github.io/profiles/0.1.1/dataset.json"),
+    resources: z.tuple([Resource]).rest(Resource)
+});
+
+export const FairspecExtensionProfile = Dataset;
+export type Table1Resource = z.infer<typeof Table1Resource>
+export type Table2Resource = z.infer<typeof Table2Resource>
+export type Resource = z.infer<typeof Resource>
+export type Dataset = z.infer<typeof Dataset>
+export type FairspecExtensionProfile = z.infer<typeof FairspecExtensionProfile>
