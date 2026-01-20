@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Fairspec Extension Profile",
   "allOf": [
-    { "$ref": "https://fairspec.org/profiles/0.1.1/dataset.json" },
+    { "$ref": "https://fairspec.org/profiles/0.1.0/dataset.json" },
     { "$ref": "#/$defs/Dataset" }
   ],
   "$defs": {
@@ -11,7 +11,7 @@
       "required": ["$schema", "resources"],
       "properties": {
         "$schema": {
-          "const": "https://fairspec.github.io/profiles/0.1.1/dataset.json"
+          "const": "https://fairspec.github.io/fairspec-extension/profiles/0.2.0/dataset.json"
         },
         "resources": {
           "type": "array",
@@ -39,7 +39,7 @@
           "const": "table1"
         },
         "tableSchema": {
-          "const": "https://fairspec.github.io/schemas/0.1.1/table1.json"
+          "const": "https://fairspec.github.io/fairspec-extension/schemas/0.2.0/table1.json"
         }
       }
     },
@@ -52,7 +52,7 @@
           "const": "table2"
         },
         "tableSchema": {
-          "const": "https://fairspec.github.io/schemas/0.1.1/table2.json"
+          "const": "https://fairspec.github.io/fairspec-extension/schemas/0.2.0/table2.json"
         }
       }
     }
