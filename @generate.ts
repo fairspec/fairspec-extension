@@ -118,7 +118,7 @@ website/profiles/dataset.json
 datamodel-codegen
 --input-file-type jsonschema
 --output python/${metadata.slug.replace("-", "_")}/models/dataset.py
---output-model-type typing.TypedDict
+--output-model-type pydantic_v2.BaseModel
 --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
 --use-generic-container-types
 --use-field-description
@@ -145,7 +145,7 @@ for (const file of await readdir("website/schemas")) {
   datamodel-codegen
   --input-file-type jsonschema
   --output python/${metadata.slug.replace("-", "_")}/models/${name}.py
-  --output-model-type typing.TypedDict
+  --output-model-type pydantic_v2.BaseModel
   --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
   --use-generic-container-types
   --use-field-description
