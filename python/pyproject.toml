@@ -1,7 +1,7 @@
 [project]
 name = "fairspec-extension"
 version = "0.2.3"
-description = "Fairspec Extension is a Git repository template for rapid Fairspec extension development"
+description = "Fairspec Extension is a repository template for rapid Fairspec extension development"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"

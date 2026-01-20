@@ -4,7 +4,7 @@
   "version": "0.2.3",
   "slug": "fairspec-extension",
   "title": "Fairspec Extension",
-  "description": "Fairspec Extension is a Git repository template for rapid Fairspec extension development",
+  "description": "Fairspec Extension is a repository template for rapid Fairspec extension development",
   "repository": "https://github.com/fairspec/fairspec-extension",
   "homepage": "https://fairspec.github.io/fairspec-extension",
   "author": "Evgeny Karev",
