@@ -53,7 +53,7 @@ export default defineConfig({
         {
           label: "Specification",
           items: [
-            { label: "Metadata", slug: "specification/packageJson" },
+            { label: "Metadata", slug: "specification/metadata" },
             {
               label: "Data",
               autogenerate: { directory: "specification/data" },
