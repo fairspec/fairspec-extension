@@ -16,7 +16,7 @@
   "scripts": {
     "bump": "ncu -ws -u",
     "build:py": "uv --directory python build",
-    "build:ts": "pnpm -F typescript build",
+    "build:ts": "pnpm -F fairspec-* build",
     "clean": "rm -rf **/node_modules",
     "configure": "node @configure.ts",
     "generate": "node @generate.ts",
