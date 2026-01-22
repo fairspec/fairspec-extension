@@ -4,7 +4,7 @@ import { execa } from "execa"
 import { loadTableSchema, renderTableSchemaAsHtml } from "fairspec"
 import { replaceInFile } from "replace-in-file"
 import tasuku from "tasuku"
-import metadata from "./package.json" with { type: "json" }
+import packageJson from "./package.json" with { type: "json" }
 
 process.chdir(import.meta.dirname)
 const shell = execa({ stdout: ["inherit"], preferLocal: true, shell: true })
@@ -14,14 +14,14 @@ const shell = execa({ stdout: ["inherit"], preferLocal: true, shell: true })
 await tasuku("Updating Website", async () => {
   await replaceInFile({
     files: "website/profiles/dataset.json",
-    from: /profiles\/.*?\//g,
-    to: `profiles/${metadata.version}/`,
+    from: /const.*dataset\.json/g,
+    to: match => match.replace(/\d+\.\d+\.\d+/, packageJson.version),
   })
 
   await replaceInFile({
     files: "website/profiles/dataset.json",
     from: /schemas\/.*?\//g,
-    to: `schemas/${metadata.version}/`,
+    to: `schemas/${packageJson.version}/`,
   })
 
   await shell`
@@ -46,22 +46,22 @@ await tasuku("Updating Website", async () => {
     )
   }
 
-  await shell`rm -rf website/public/profiles/${metadata.version}`
-  await shell`rm -rf website/public/schemas/${metadata.version}`
+  await shell`rm -rf website/public/profiles/${packageJson.version}`
+  await shell`rm -rf website/public/schemas/${packageJson.version}`
 
-  await shell`mkdir -p website/public/profiles/${metadata.version}`
-  await shell`mkdir -p website/public/schemas/${metadata.version}`
+  await shell`mkdir -p website/public/profiles/${packageJson.version}`
+  await shell`mkdir -p website/public/schemas/${packageJson.version}`
 
   await shell`
   cp
   website/profiles/*.json
-  website/public/profiles/${metadata.version}
+  website/public/profiles/${packageJson.version}
   `
 
   await shell`
   cp
   website/schemas/*.json
-  website/public/schemas/${metadata.version}
+  website/public/schemas/${packageJson.version}
   `
 })
 
@@ -146,7 +146,7 @@ await tasuku("Updating Python", async () => {
   --from datamodel-code-generator@0.34.0
   datamodel-codegen
   --input-file-type jsonschema
-  --output python/${metadata.slug.replace("-", "_")}/models/dataset.py
+  --output python/${packageJson.slug.replace("-", "_")}/models/dataset.py
   --output-model-type pydantic_v2.BaseModel
   --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
   --use-generic-container-types
@@ -156,7 +156,7 @@ await tasuku("Updating Python", async () => {
 
   // It fixes a weird bug of schema -> schema_ conversion
   await replaceInFile({
-    files: [`python/${metadata.slug.replace("-", "_")}/models/dataset.py`],
+    files: [`python/${packageJson.slug.replace("-", "_")}/models/dataset.py`],
     from: /schema_:/g,
     to: "schema:",
   })
@@ -173,7 +173,7 @@ await tasuku("Updating Python", async () => {
     --from datamodel-code-generator@0.34.0
     datamodel-codegen
     --input-file-type jsonschema
-    --output python/${metadata.slug.replace("-", "_")}/models/${name}.py
+    --output python/${packageJson.slug.replace("-", "_")}/models/${name}.py
     --output-model-type pydantic_v2.BaseModel
     --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
     --use-generic-container-types
@@ -183,7 +183,7 @@ await tasuku("Updating Python", async () => {
   }
 
   await writeFile(
-    `python/${metadata.slug.replace("-", "_")}/models/__init__.py`,
+    `python/${packageJson.slug.replace("-", "_")}/models/__init__.py`,
     pythonIndex.join("\n"),
   )
 })

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://fairspec.org/profiles/0.2.0/schema.json",
+  "$schema": "https://fairspec.org/profiles/0.3.0/table-schema.json",
   "title": "Table2",
   "description": "An exemplar schema demonstrating foreign key relationships and additional constraints",
   "primaryKey": ["id"],
