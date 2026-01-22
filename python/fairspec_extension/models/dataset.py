@@ -10,14 +10,14 @@ from pydantic import BaseModel, Field, RootModel
 class Table1Resource(BaseModel):
     name: Literal['table1']
     tableSchema: Literal[
-        'https://fairspec.github.io/fairspec-extension/schemas/0.3.0/table1.json'
+        'https://fairspec.github.io/fairspec-extension/schemas/0.4.0/table1.json'
     ]
 
 
 class Table2Resource(BaseModel):
     name: Literal['table2']
     tableSchema: Literal[
-        'https://fairspec.github.io/fairspec-extension/schemas/0.3.0/table2.json'
+        'https://fairspec.github.io/fairspec-extension/schemas/0.4.0/table2.json'
     ]
 
 
@@ -27,7 +27,7 @@ class Resource(RootModel[Union[Table1Resource, Table2Resource]]):
 
 class Dataset(BaseModel):
     field_schema: Literal[
-        'https://fairspec.github.io/fairspec-extension/profiles/0.3.0/dataset.json'
+        'https://fairspec.github.io/fairspec-extension/profiles/0.4.0/dataset.json'
     ] = Field(..., alias='$schema')
     resources: Sequence[Resource] = Field(..., min_length=1)
 

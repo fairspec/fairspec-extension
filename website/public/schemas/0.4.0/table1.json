@@ -1,0 +1,62 @@
+{
+  "$schema": "https://fairspec.org/profiles/0.3.0/table-schema.json",
+  "title": "Table1",
+  "description": "An exemplar schema demonstrating various field types and constraints",
+  "primaryKey": ["id"],
+  "required": ["id", "name", "status", "value", "isVerified", "createdDate"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the record",
+      "examples": ["t1-001", "t1-002", "t1-003"],
+      "pattern": "^t1-[0-9]{3}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the entity",
+      "examples": ["Example Entity", "Sample Item"],
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "status": {
+      "type": "string",
+      "format": "categorical",
+      "description": "Current status of the entity",
+      "examples": ["active", "inactive", "pending"],
+      "categories": ["active", "inactive", "pending"],
+      "enum": ["active", "inactive", "pending"]
+    },
+    "value": {
+      "type": "number",
+      "description": "Numeric value associated with the entity",
+      "examples": [100.5, 250.75, 500],
+      "minimum": 0
+    },
+    "itemCount": {
+      "type": "integer",
+      "description": "Count of items",
+      "examples": [5, 10, 25],
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "isVerified": {
+      "type": "boolean",
+      "description": "Whether the entity has been verified",
+      "examples": [true, false]
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when the entity was created",
+      "examples": ["2024-01-15", "2024-03-20"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional description of the entity",
+      "examples": [
+        "This is a sample description",
+        "Additional notes about the entity"
+      ]
+    }
+  }
+}
