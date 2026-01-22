@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Fairspec Extension Profile",
   "allOf": [
-    { "$ref": "https://fairspec.org/profiles/0.2.3/dataset.json" },
+    { "$ref": "https://fairspec.org/profiles/0.2.0/dataset.json" },
     { "$ref": "#/$defs/Dataset" }
   ],
   "$defs": {
