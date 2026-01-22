@@ -1,7 +1,7 @@
 {
   "name": "website",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "private": true,
   "slug": "fairspec-extension",
   "title": "Fairspec Extension",

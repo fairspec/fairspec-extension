@@ -1,0 +1,68 @@
+{
+  "$schema": "https://fairspec.org/profiles/0.2.0/schema.json",
+  "title": "Table2",
+  "description": "An exemplar schema demonstrating foreign key relationships and additional constraints",
+  "primaryKey": ["id"],
+  "required": ["id", "title", "amount", "priority", "isActive"],
+  "foreignKeys": [
+    {
+      "columns": ["table1Id"],
+      "reference": {
+        "resource": "table1",
+        "columns": ["id"]
+      }
+    }
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the record",
+      "examples": ["t2-001", "t2-002", "t2-003"],
+      "pattern": "^t2-[0-9]{3}$"
+    },
+    "table1Id": {
+      "type": "string",
+      "description": "Reference to the parent table1 record. If not provided, the record is independent",
+      "examples": ["t1-001", "t1-002"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Title or name of the item",
+      "examples": ["First Item", "Second Item", "Sample Entry"],
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "amount": {
+      "type": "number",
+      "description": "Monetary or numeric amount",
+      "examples": [99.99, 150.5, 2500],
+      "minimum": 0
+    },
+    "priority": {
+      "type": "string",
+      "format": "categorical",
+      "description": "Priority level of the item",
+      "examples": ["low", "medium", "high"],
+      "categories": ["low", "medium", "high"],
+      "enum": ["low", "medium", "high"]
+    },
+    "percentage": {
+      "type": "number",
+      "description": "Percentage value between 0 and 100",
+      "examples": [25.5, 50, 75.25, 100],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or comments",
+      "examples": ["This is a note", "Additional information here"],
+      "maxLength": 500
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Whether the item is currently active",
+      "examples": [true, false]
+    }
+  }
+}
