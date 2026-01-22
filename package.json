@@ -40,7 +40,7 @@
     "@types/node": "24.5.2",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "execa": "9.6.0",
-    "fairspec": "0.2.2",
+    "fairspec": "0.3.0",
     "husky": "9.1.7",
     "json-schema-to-typescript": "15.0.4",
     "npm-check-updates": "18.0.1",

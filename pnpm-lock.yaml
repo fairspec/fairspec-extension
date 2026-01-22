@@ -30,8 +30,8 @@ importers:
         specifier: 9.6.0
         version: 9.6.0
       fairspec:
-        specifier: 0.2.2
-        version: 0.2.2(typescript@5.9.2)
+        specifier: 0.3.0
+        version: 0.3.0(typescript@5.9.2)
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -439,23 +439,26 @@ packages:
   '@expressive-code/plugin-text-markers@0.41.3':
     resolution: {integrity: sha512-SN8tkIzDpA0HLAscEYD2IVrfLiid6qEdE9QLlGVSxO1KEw7qYvjpbNBQjUjMr5/jvTJ7ys6zysU2vLPHE0sb2g==}
 
-  '@fairspec/dataset@0.2.2':
-    resolution: {integrity: sha512-qQ4nbMAeYUnVaPjCkOg1/FHTEEslZLm9uzkBrIE3mSM0hGPvwwiwt+EApDe6Jm1uJ5mDxSgZri7FdkKFUoEONw==}
+  '@fairspec/dataset@0.3.0':
+    resolution: {integrity: sha512-jdVNMTgHuyDGkLhXW4oAAdFWzxIhUr5UVKDH5w7fKJHZRiRBlHn28EYuqYkELAnZS2hoTX+kZprD27q8bbN4Eg==}
 
-  '@fairspec/extension@0.2.2':
-    resolution: {integrity: sha512-JdYlQyWCb3AUxhNShZnWmrJQv7oYAMcGMJpes96U5j0CQxoYRqa0SwD5JKQNTZoVVcG0icqNVHeyGe+HYCa9UA==}
+  '@fairspec/extension@0.3.0':
+    resolution: {integrity: sha512-TjMVa78hNqklb2LmN7m0jHcX8dcWVoy5K/lcOvre62kce7YCxzsQZhw6QclgVThVFxy5NmZ9qMEJ2nzxbEVrnQ==}
 
-  '@fairspec/library@0.2.2':
-    resolution: {integrity: sha512-4tOQtwPL2akcaXVgo9qhvOCRakGymJ++cLJ52I9oVwRRjoK/helYG7FQ9nsYD+hTXyekDqAEvgpW3UnMYFuGDA==}
+  '@fairspec/library@0.3.0':
+    resolution: {integrity: sha512-utl5zP5JlU3vnXelAYC0UHvekvL1o9Iq+6gdWMFpS4lqAK97UQsyIUdcwuRmFq4IBo0Z+mNO/QrGlSq/VphLuA==}
 
   '@fairspec/metadata@0.2.2':
     resolution: {integrity: sha512-ulcMyw9t1z9QasP0q2uKUCr/RD1DwDhfIgwJ2L3C1Ho+ALM63gbR0FuYS+XAB+Hw5OTPYN3zrweEOLkXrFVzQA==}
 
-  '@fairspec/table@0.2.2':
-    resolution: {integrity: sha512-1hYYGfQD/3fV3Q41B/SxqwebA1Kxn6x5BSq/I3qJH/1lvq9dKW7J1roDDT+jW+GRDTXgFGAWNaA8TaKYMZUsQQ==}
+  '@fairspec/metadata@0.3.0':
+    resolution: {integrity: sha512-00/xySyGPsmjMZXkHFhmGE0pr/pT7jw/i6ByBNsheIS9HfhiC2VDt4XRd+4WqQ/Zf/jnzfMW1FnP3LuIC7w0Uw==}
 
-  '@fairspec/terminal@0.2.2':
-    resolution: {integrity: sha512-clg9EVWhkcqT5zb5vhJc0fURLJteEN8HM21s51zFl7Hms5RQdCTKam86ND86jVXhINzvIFQbDtm2eroUe0XsdQ==}
+  '@fairspec/table@0.3.0':
+    resolution: {integrity: sha512-x9CNezoXzmZ8l2GB96JtWoHddQHmXYOtYNlvTxMzaKPhwWaZgqU0p9PvcjYXtAPx1+Gde2sA0h9qoOq/ED05KQ==}
+
+  '@fairspec/terminal@0.3.0':
+    resolution: {integrity: sha512-IMo08KdKL6HR+UK1yqCoUzFtLm7KBoOZNrYPYMgEVuaKwhqVlAG31qJfQdV2nR3L6suq0RFOCIcD1aUFNnZ2WA==}
     hasBin: true
 
   '@glideapps/ts-necessities@2.2.3':
@@ -1637,8 +1640,8 @@ packages:
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
-  fairspec@0.2.2:
-    resolution: {integrity: sha512-cNQz4hBZC+ryuIkKh+QlF7O5CDtNITrRVQj6aWLXlcQXY8MUsdo04XCefBFpJjFO73b0HDZXi8wIfb/bQKCszw==}
+  fairspec@0.3.0:
+    resolution: {integrity: sha512-q8xyipDt6gm+Lx0qggtZ+lmezv0cekcIAHNgADxukCam8onKd3LQWJfGvMG7hgu5u544ctSW0MbRrRTb1muu9A==}
     hasBin: true
 
   fast-content-type-parse@3.0.0:
@@ -4210,9 +4213,9 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.41.3
 
-  '@fairspec/dataset@0.2.2':
+  '@fairspec/dataset@0.3.0':
     dependencies:
-      '@fairspec/metadata': 0.2.2
+      '@fairspec/metadata': 0.3.0
       chardet: 2.1.0
       exit-hook: 4.0.0
       fflate: 0.8.2
@@ -4224,9 +4227,9 @@ snapshots:
       tempy: 3.1.0
       zod: 4.3.5
 
-  '@fairspec/extension@0.2.2':
+  '@fairspec/extension@0.3.0':
     dependencies:
-      '@fairspec/metadata': 0.2.2
+      '@fairspec/metadata': 0.3.0
       htmlfy: 1.0.0
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
@@ -4235,12 +4238,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fairspec/library@0.2.2(typescript@5.9.2)':
+  '@fairspec/library@0.3.0(typescript@5.9.2)':
     dependencies:
-      '@fairspec/dataset': 0.2.2
-      '@fairspec/extension': 0.2.2
-      '@fairspec/metadata': 0.2.2
-      '@fairspec/table': 0.2.2(typescript@5.9.2)
+      '@fairspec/dataset': 0.3.0
+      '@fairspec/extension': 0.3.0
+      '@fairspec/metadata': 0.3.0
+      '@fairspec/table': 0.3.0(typescript@5.9.2)
       json-schema-it: 1.2.23
       p-all: 5.0.1
     transitivePeerDependencies:
@@ -4256,10 +4259,19 @@ snapshots:
       ts-extras: 0.16.1
       zod: 4.3.5
 
-  '@fairspec/table@0.2.2(typescript@5.9.2)':
+  '@fairspec/metadata@0.3.0':
     dependencies:
-      '@fairspec/dataset': 0.2.2
-      '@fairspec/metadata': 0.2.2
+      '@sindresorhus/slugify': 0.9.1
+      '@types/json-schema': 7.0.15
+      ajv: 8.17.1
+      quick-lru: 7.2.0
+      ts-extras: 0.16.1
+      zod: 4.3.5
+
+  '@fairspec/table@0.3.0(typescript@5.9.2)':
+    dependencies:
+      '@fairspec/dataset': 0.3.0
+      '@fairspec/metadata': 0.3.0
       csv-sniffer: 0.1.1
       kysely: 0.28.7
       kysely-generic-sqlite: 1.2.1(kysely@0.28.7)
@@ -4273,11 +4285,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@fairspec/terminal@0.2.2(typescript@5.9.2)':
+  '@fairspec/terminal@0.3.0(typescript@5.9.2)':
     dependencies:
       '@bomb.sh/tab': 0.0.11(commander@14.0.2)
       '@commander-js/extra-typings': 14.0.0(commander@14.0.2)
-      '@fairspec/library': 0.2.2(typescript@5.9.2)
+      '@fairspec/library': 0.3.0(typescript@5.9.2)
       commander: 14.0.2
       exit-hook: 4.0.0
       json-colorizer: 3.0.1
@@ -5585,10 +5597,10 @@ snapshots:
 
   extend@3.0.2: {}
 
-  fairspec@0.2.2(typescript@5.9.2):
+  fairspec@0.3.0(typescript@5.9.2):
     dependencies:
-      '@fairspec/library': 0.2.2(typescript@5.9.2)
-      '@fairspec/terminal': 0.2.2(typescript@5.9.2)
+      '@fairspec/library': 0.3.0(typescript@5.9.2)
+      '@fairspec/terminal': 0.3.0(typescript@5.9.2)
     transitivePeerDependencies:
       - cac
       - citty
