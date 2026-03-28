@@ -8,8 +8,8 @@
   "repository": "https://github.com/fairspec/fairspec-extension",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "type": "tsc --noEmit"
+    "build": "tsgo",
+    "type": "tsgo --noEmit"
   },
   "dependencies": {
     "@fairspec/metadata": "^0.2.2",
