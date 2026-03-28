@@ -46,8 +46,10 @@ pids
 # Notebooks
 .ipynb_checkpoints/
 
-# React
-.react-router/
+# Environment
+.env
+.env.local
+.env.test
 
 # User
 .vim/
@@ -62,13 +64,11 @@ build/
 compile/
 dist/
 .astro/
-/docs/content/docs/reference/
-.cursor/
-.claude/
 .serena/
-.mcp.json
-.env
 .venv
 uv.lock
+messages.js
 .user/
 tmuxp.yaml
+/website/content/docs/reference/
+/.claude/settings.local.json

@@ -11,7 +11,7 @@ Fairspec Extension is a data exchange format that helps `PLACEHOLDER` share thei
 
 ## Why Fairspec Extension?
 
-The `PLACEHOLDER` lacks a standardized format for exchanging  data among publishers, and aggregation platforms. This creates several challenges:
+The `PLACEHOLDER` lacks a standardized format for exchanging data among publishers, and aggregation platforms. This creates several challenges:
 
 - **Data inconsistency**: Each platform uses its own proprietary format, making integration difficult
 - **Manual data entry**: Often needed to manually enter the same data across multiple platforms
@@ -52,6 +52,7 @@ A Fairspec Extension is a [Fairspec](https://fairspec.org/) that follows the Fai
    - **table2**: Second table (and so on)
 
 Each resource includes:
+
 - **name**: The resource type identifier
 - **schema**: URL pointing to the JSON schema that validates the data structure
 

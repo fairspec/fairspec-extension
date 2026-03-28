@@ -125,7 +125,7 @@ await tasuku("Updating TypeScript", async () => {
 
   await shell`
   sed -i
-  '1s|.*|// biome-ignore-all format: DO NOT UPDATE this @generated file|g'
+  '1s|.*|/* eslint-disable */ // DO NOT UPDATE this @generated file|g'
   typescript/models/*.ts
   `
 

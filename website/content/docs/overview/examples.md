@@ -57,7 +57,7 @@ A basic example with two tables using inline data. Table2 records can optionally
           "id": "t2-002",
           "table1Id": "t1-001",
           "title": "Another Related Item",
-          "amount": 150.00,
+          "amount": 150.0,
           "priority": "medium",
           "percentage": 50,
           "isActive": true
@@ -65,7 +65,7 @@ A basic example with two tables using inline data. Table2 records can optionally
         {
           "id": "t2-003",
           "title": "Independent Item",
-          "amount": 200.00,
+          "amount": 200.0,
           "priority": "low",
           "percentage": 25,
           "notes": "This item has no parent reference",
@@ -102,6 +102,7 @@ An example demonstrating the use of `path` instead of inline `data` to reference
 ```
 
 **data/table1.csv:**
+
 ```csv
 id,name,status,value,itemCount,isVerified,createdDate,description
 t1-001,First Entity,active,100.5,5,true,2024-01-15,This is the first example entity
@@ -110,6 +111,7 @@ t1-003,Third Entity,inactive,500,25,true,2024-03-10,Another example
 ```
 
 **data/table2.csv:**
+
 ```csv
 id,table1Id,title,amount,priority,percentage,notes,isActive
 t2-001,t1-001,Related Item,99.99,high,75.5,This item is related to the first entity,true
@@ -203,6 +205,7 @@ An example showing various constraint validations:
 ```
 
 This example demonstrates:
+
 - Pattern constraints (IDs matching `t1-999` and `t2-999`)
 - String length constraints (name between 3-100 chars, title between 1-200 chars)
 - Numeric constraints (itemCount max 1000, percentage 0-100)

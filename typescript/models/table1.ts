@@ -1,4 +1,4 @@
-// biome-ignore-all format: DO NOT UPDATE this @generated file
+/* eslint-disable */ // DO NOT UPDATE this @generated file
 import { z } from "zod";
 
 export const Table1 = z.object({
