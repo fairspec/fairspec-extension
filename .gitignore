@@ -70,5 +70,6 @@ uv.lock
 messages.js
 .user/
 tmuxp.yaml
-/website/content/docs/reference/
+/.livemark/build/
 /.claude/settings.local.json
+.tanstack/

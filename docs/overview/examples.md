@@ -1,7 +1,8 @@
 ---
 title: Examples
-sidebar:
-  order: 3
+path: /overview/examples/
+icon: list
+order: 3
 ---
 
 This page provides examples of Fairspec Extension files for different scenarios.

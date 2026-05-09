@@ -86,12 +86,7 @@ if (title || description || repository) {
   loader.start("Updating the extension...")
 
   await replaceInFile({
-    files: [
-      "python/README.md",
-      "typescript/README.md",
-      "website/README.md",
-      "README.md",
-    ],
+    files: ["python/README.md", "typescript/README.md", "README.md"],
     processor: source => {
       const tree = remark().parse(source)
 
@@ -143,7 +138,7 @@ if (title || description || repository) {
   })
 
   await replaceInFile({
-    files: ["typescript/package.json", "website/package.json", "package.json"],
+    files: ["typescript/package.json", "package.json"],
     processor: (source, file) => {
       const data = JSON.parse(source) as any
 

@@ -1,7 +1,8 @@
 ---
 title: Contributing
-sidebar:
-  order: 4
+path: /overview/contributing/
+icon: heart-handshake
+order: 99
 ---
 
 Here you can find the guidelines for contributing to the extension. We welcome any kind of contributions either by opening issues or by submitting pull requests.
@@ -46,10 +47,10 @@ pnpm start
 
 The fiels you need to edit to update the extension:
 
-- **website/profiles/** - Edit the profile to model your dataset
-- **website/schemas/** - Edit the schemas to model your data tables
-- **website/content/docs/index.mdx** - Edit the homepage
-- **website/content/docs/overview/** - Edit not generated documentation pages
+- **docs/profiles/** - Edit the profile to model your dataset
+- **docs/schemas/** - Edit the schemas to model your data tables
+- **.livemark/routes/index.tsx** - Edit the homepage
+- **docs/overview/** - Edit not generated documentation pages
 
 The rest of the files are generic or generated and should not be edited directly unless you want a more granular control over the extension development.
 

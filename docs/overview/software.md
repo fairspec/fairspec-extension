@@ -1,7 +1,8 @@
 ---
 title: Software
-sidebar:
-  order: 2
+path: /overview/software/
+icon: package
+order: 2
 ---
 
 Fairspec Extension provides SDKs for Python and TypeScript/JavaScript to make it easy to publish and consume Extension datasets.

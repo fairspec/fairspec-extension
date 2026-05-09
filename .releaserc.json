@@ -20,12 +20,11 @@
           "python/*/models/*.py",
           "typescript/package.json",
           "typescript/models/*.ts",
-          "website/package.json",
-          "website/profiles/*.json",
-          "website/public/profiles/*/*.json",
-          "website/public/schemas/*/*.json",
-          "website/content/docs/specification/metadata.md",
-          "website/content/docs/specification/data/*.md",
+          "docs/profiles/*.json",
+          "docs/specification/metadata.md",
+          "docs/specification/data/*.md",
+          ".livemark/public/profiles/*/*.json",
+          ".livemark/public/schemas/*/*.json",
           "package.json"
         ]
       }

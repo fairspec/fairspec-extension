@@ -101,11 +101,11 @@ jobs:
         if: needs.release.outputs.created == 'true'
         run: pnpm generate
       - name: Build Website
-        run: pnpm -F website build
+        run: pnpm docs:build
       - name: Upload Site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website/build
+          path: .livemark/build/client
       - name: Deploy Site
         id: deployment
         uses: actions/deploy-pages@v4

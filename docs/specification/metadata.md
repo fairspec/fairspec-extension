@@ -1,5 +1,7 @@
 ---
 title: Metadata
+path: /specification/metadata/
+order: 1
 ---
 
 ## Definitions

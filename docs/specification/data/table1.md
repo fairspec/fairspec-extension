@@ -1,5 +1,6 @@
 ---
 title: Table1
+path: /specification/data/table1/
 ---
 
 <h2>Primary Key</h2>

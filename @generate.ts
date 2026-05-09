@@ -13,13 +13,13 @@ const shell = execa({ stdout: ["inherit"], preferLocal: true, shell: true })
 
 await tasuku("Updating Website", async () => {
   await replaceInFile({
-    files: "website/profiles/dataset.json",
+    files: "docs/profiles/dataset.json",
     from: /const.*dataset\.json/g,
     to: match => match.replace(/\d+\.\d+\.\d+/, packageJson.version),
   })
 
   await replaceInFile({
-    files: "website/profiles/dataset.json",
+    files: "docs/profiles/dataset.json",
     from: /schemas\/.*?\//g,
     to: `schemas/${packageJson.version}/`,
   })
@@ -27,41 +27,43 @@ await tasuku("Updating Website", async () => {
   await shell`
   uvx
   jsonschema2md@1.7.0
-  website/profiles/dataset.json website/content/docs/specification/metadata.md
+  docs/profiles/dataset.json docs/specification/metadata.md
   `
 
   await replaceInFile({
-    files: ["website/content/docs/specification/metadata.md"],
+    files: ["docs/specification/metadata.md"],
     from: /^#.*/,
-    to: "---\ntitle: Metadata\n---",
+    to: "---\ntitle: Metadata\npath: /specification/metadata/\norder: 1\n---",
   })
 
-  for (const file of await readdir("website/schemas")) {
+  for (const file of await readdir("docs/schemas")) {
     const basename = nodePath.basename(file, nodePath.extname(file))
-    const tableSchema = await loadTableSchema(`website/schemas/${file}`)
-
-    await writeFile(
-      `website/content/docs/specification/data/${basename}.md`,
-      renderTableSchemaAsHtml(tableSchema, { frontmatter: true }),
+    const tableSchema = await loadTableSchema(`docs/schemas/${file}`)
+    const rendered = renderTableSchemaAsHtml(tableSchema, { frontmatter: true })
+    const withPath = rendered.replace(
+      /^---\n([\s\S]*?)\n---/,
+      (_, body) => `---\n${body}\npath: /specification/data/${basename}/\n---`,
     )
+
+    await writeFile(`docs/specification/data/${basename}.md`, withPath)
   }
 
-  await shell`rm -rf website/public/profiles/${packageJson.version}`
-  await shell`rm -rf website/public/schemas/${packageJson.version}`
+  await shell`rm -rf .livemark/public/profiles/${packageJson.version}`
+  await shell`rm -rf .livemark/public/schemas/${packageJson.version}`
 
-  await shell`mkdir -p website/public/profiles/${packageJson.version}`
-  await shell`mkdir -p website/public/schemas/${packageJson.version}`
+  await shell`mkdir -p .livemark/public/profiles/${packageJson.version}`
+  await shell`mkdir -p .livemark/public/schemas/${packageJson.version}`
 
   await shell`
   cp
-  website/profiles/*.json
-  website/public/profiles/${packageJson.version}
+  docs/profiles/*.json
+  .livemark/public/profiles/${packageJson.version}
   `
 
   await shell`
   cp
-  website/schemas/*.json
-  website/public/schemas/${packageJson.version}
+  docs/schemas/*.json
+  .livemark/public/schemas/${packageJson.version}
   `
 })
 
@@ -71,7 +73,7 @@ await tasuku("Updating TypeScript", async () => {
   await shell`
   jq
   '.allOf |= .[1:]'
-  website/profiles/dataset.json
+  docs/profiles/dataset.json
   | json2ts
   --additionalProperties false
   > typescript/models/dataset.ts
@@ -91,13 +93,13 @@ await tasuku("Updating TypeScript", async () => {
   `
 
   const typescriptIndex: string[] = ['export * from "./dataset.ts"']
-  for (const file of await readdir("website/schemas")) {
+  for (const file of await readdir("docs/schemas")) {
     const basename = nodePath.basename(file, nodePath.extname(file))
     typescriptIndex.push(`export * from "./${basename}.ts"`)
 
     await shell`
     cat
-    website/schemas/${file}
+    docs/schemas/${file}
     | json2ts
     --additionalProperties false
     > typescript/models/${basename}.ts
@@ -141,7 +143,7 @@ await tasuku("Updating Python", async () => {
   await shell`
   jq
   '.allOf |= .[1:]'
-  website/profiles/dataset.json
+  docs/profiles/dataset.json
   | uvx
   --from datamodel-code-generator@0.34.0
   datamodel-codegen
@@ -162,13 +164,13 @@ await tasuku("Updating Python", async () => {
   })
 
   const pythonIndex: string[] = ["from .dataset import *"]
-  for (const file of await readdir("website/schemas")) {
+  for (const file of await readdir("docs/schemas")) {
     const name = nodePath.basename(file, nodePath.extname(file))
     pythonIndex.push(`from .${name} import *`)
 
     await shell`
     cat
-    website/schemas/${file}
+    docs/schemas/${file}
     | uvx
     --from datamodel-code-generator@0.34.0
     datamodel-codegen
