@@ -102,6 +102,8 @@ jobs:
         run: pnpm generate
       - name: Build Website
         run: pnpm docs:build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Site
         uses: actions/upload-pages-artifact@v3
         with:

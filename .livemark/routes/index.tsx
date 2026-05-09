@@ -273,8 +273,7 @@ function DatasetSample() {
         <span className={tk.punct}>,</span>
         {"\n          "}
         <span className={tk.key}>"isVerified"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.num}>true</span>
+        <span className={tk.punct}>:</span> <span className={tk.num}>true</span>
         {"\n        "}
         <span className={tk.punct}>{"}"}</span>
         {"\n      "}
@@ -301,8 +300,7 @@ function Showcase() {
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
               Author your profile and table schemas; the template generates
-              typed Python and TypeScript bindings, validation, and a docs
-              site.
+              typed Python and TypeScript bindings, validation, and a docs site.
             </p>
           </div>
         </Reveal>
