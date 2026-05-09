@@ -13,13 +13,14 @@ export default defineConfig({
   include: ["docs/**/*.md", "README.md", "CONTRIBUTING.md"],
   exclude: ["docs/profiles/**", "docs/schemas/**"],
   sections: [
-    { title: "Docs", prefix: "/" },
+    { title: "Docs", prefix: "/", icon: "book-open" },
     {
       title: "Changelog",
       prefix: "/changelog/",
       type: "changelog",
       source: packageJson.repository,
       version: true,
+      icon: "history",
     },
   ],
   links: [
