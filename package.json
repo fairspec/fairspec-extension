@@ -8,7 +8,7 @@
   "repository": "https://github.com/fairspec/fairspec-extension",
   "type": "module",
   "scripts": {
-    "bump": "ncu -ws -u",
+    "deps": "ncu -ws -u",
     "build:py": "uv --directory python build",
     "build:ts": "pnpm -F fairspec-* build",
     "configure": "node @configure.ts",
@@ -58,9 +58,9 @@
   },
   "engines": {
     "node": "^24.0.0",
-    "pnpm": "^10.0.0"
+    "pnpm": "^11.0.0"
   },
-  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
+  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
   "slug": "fairspec-extension",
   "title": "Fairspec Extension"
 }
