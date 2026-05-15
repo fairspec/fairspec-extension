@@ -8,10 +8,10 @@
   "repository": "https://github.com/fairspec/fairspec-extension",
   "type": "module",
   "scripts": {
-    "deps": "ncu -ws -u",
     "build:py": "uv --directory python build",
     "build:ts": "pnpm -F fairspec-* build",
     "configure": "node @configure.ts",
+    "deps": "ncu -ws -u",
     "generate": "node @generate.ts",
     "format": "vp fmt",
     "leaks": "gitleaks git --config=.gitleaks.toml --verbose --redact",

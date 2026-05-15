@@ -1,3 +1,7 @@
-dangerouslyAllowAllBuilds: true
 packages:
   - typescript
+
+allowBuilds:
+  esbuild: true
+  lefthook: true
+  msw: true
