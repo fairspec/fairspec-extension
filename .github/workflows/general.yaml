@@ -96,7 +96,7 @@ jobs:
         run: pnpm install
       - name: Set Version
         if: needs.release.outputs.created == 'true'
-        run: pnpm /setversion/ ${{ needs.release.outputs.version }}
+        run: pnpm /vers/ ${{ needs.release.outputs.version }}
       - name: Generate Packages
         if: needs.release.outputs.created == 'true'
         run: pnpm generate
