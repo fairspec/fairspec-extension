@@ -91,7 +91,7 @@ importers:
         version: 0.2.2
       zod:
         specifier: ^4.3.5
-        version: 4.3.5
+        version: 4.4.3
 
 packages:
 
@@ -3828,11 +3828,12 @@ packages:
 
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   goober@2.1.18:
     resolution: {integrity: sha512-2vFqsaDVIT9Gz7N6kAL++pLpp41l3PfDuusHcjnGLfR6+huZkl6ziX+zgVC3ZxpqWhzH6pyDdGrCeDhMIvwaxw==}
@@ -6755,11 +6756,11 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.3.5:
-    resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
-
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -7307,7 +7308,7 @@ snapshots:
       p-all: 5.0.1
       p-map: 7.0.3
       tempy: 3.1.0
-      zod: 4.3.5
+      zod: 4.4.3
 
   '@fairspec/extension@0.4.0':
     dependencies:
@@ -7339,7 +7340,7 @@ snapshots:
       ajv: 8.17.1
       quick-lru: 7.2.0
       ts-extras: 0.16.1
-      zod: 4.3.5
+      zod: 4.4.3
 
   '@fairspec/metadata@0.4.0':
     dependencies:
@@ -7348,7 +7349,7 @@ snapshots:
       ajv: 8.17.1
       quick-lru: 7.2.0
       ts-extras: 0.16.1
-      zod: 4.3.5
+      zod: 4.4.3
 
   '@fairspec/table@0.4.0(typescript@5.9.2)':
     dependencies:
@@ -7362,7 +7363,7 @@ snapshots:
       temporal-polyfill: 0.3.0
       wkx-ts: 1.0.1(typescript@5.9.2)
       xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
-      zod: 4.3.5
+      zod: 4.4.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -13633,7 +13634,7 @@ snapshots:
       tslib: 2.8.1
       tsutils: 3.21.0(typescript@5.9.2)
       typescript: 5.9.2
-      zod: 4.3.5
+      zod: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -14115,8 +14116,8 @@ snapshots:
 
   zod@3.25.76: {}
 
-  zod@4.3.5: {}
-
   zod@4.3.6: {}
+
+  zod@4.4.3: {}
 
   zwitch@2.0.4: {}
