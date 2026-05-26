@@ -55,12 +55,11 @@ function Hero() {
         </h1>
 
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          A template for rapid{" "}
-          <code className="font-mono text-foreground">Fairspec</code> extension
-          development. Generates{" "}
+          A template for rapid <code className="font-mono text-foreground">Fairspec</code>{" "}
+          extension development. Generates{" "}
           <code className="font-mono text-foreground">Python</code> and{" "}
-          <code className="font-mono text-foreground">TypeScript</code> SDKs
-          automatically from your profile and table schemas.
+          <code className="font-mono text-foreground">TypeScript</code> SDKs automatically
+          from your profile and table schemas.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -175,8 +174,7 @@ function Features() {
               Everything an extension needs
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Sensible defaults, no setup to start, and SDKs you don't have to
-              maintain.
+              Sensible defaults, no setup to start, and SDKs you don't have to maintain.
             </p>
           </div>
         </Reveal>
@@ -199,9 +197,7 @@ function FeatureCard({ icon: Icon, title, description }: Feature) {
         <Icon className="size-5" />
       </div>
       <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-        {description}
-      </p>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   )
 }
@@ -236,8 +232,7 @@ function DatasetSample() {
         <span className={tk.punct}>{"{"}</span>
         {"\n      "}
         <span className={tk.key}>"name"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"table1"</span>
+        <span className={tk.punct}>:</span> <span className={tk.str}>"table1"</span>
         <span className={tk.punct}>,</span>
         {"\n      "}
         <span className={tk.key}>"tableSchema"</span>
@@ -253,23 +248,19 @@ function DatasetSample() {
         <span className={tk.punct}>{"{"}</span>
         {"\n          "}
         <span className={tk.key}>"id"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"t1-001"</span>
+        <span className={tk.punct}>:</span> <span className={tk.str}>"t1-001"</span>
         <span className={tk.punct}>,</span>
         {"\n          "}
         <span className={tk.key}>"name"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"First Entity"</span>
+        <span className={tk.punct}>:</span> <span className={tk.str}>"First Entity"</span>
         <span className={tk.punct}>,</span>
         {"\n          "}
         <span className={tk.key}>"status"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"active"</span>
+        <span className={tk.punct}>:</span> <span className={tk.str}>"active"</span>
         <span className={tk.punct}>,</span>
         {"\n          "}
         <span className={tk.key}>"value"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.num}>100.5</span>
+        <span className={tk.punct}>:</span> <span className={tk.num}>100.5</span>
         <span className={tk.punct}>,</span>
         {"\n          "}
         <span className={tk.key}>"isVerified"</span>
@@ -299,8 +290,8 @@ function Showcase() {
               Define a schema. Ship an SDK.
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Author your profile and table schemas; the template generates
-              typed Python and TypeScript bindings, validation, and a docs site.
+              Author your profile and table schemas; the template generates typed Python
+              and TypeScript bindings, validation, and a docs site.
             </p>
           </div>
         </Reveal>
@@ -334,8 +325,8 @@ function FinalCta() {
             <span className="text-primary">Publish your extension.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Click "Use this template" on GitHub, configure the metadata, edit
-            your schemas, and ship.
+            Click "Use this template" on GitHub, configure the metadata, edit your
+            schemas, and ship.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link

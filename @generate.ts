@@ -131,10 +131,7 @@ await tasuku("Updating TypeScript", async () => {
   typescript/models/*.ts
   `
 
-  await writeFile(
-    `typescript/models/index.ts`,
-    `${typescriptIndex.join("\n")}\n`,
-  )
+  await writeFile(`typescript/models/index.ts`, `${typescriptIndex.join("\n")}\n`)
 })
 
 // Python

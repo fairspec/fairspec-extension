@@ -127,8 +127,7 @@ const record2: Table2 = {
 }
 
 const dataset: Dataset = {
-  $schema:
-    "https://fairspec.github.io/fairspec-extension/profiles/v0.1.5/datast.json",
+  $schema: "https://fairspec.github.io/fairspec-extension/profiles/v0.1.5/datast.json",
   resources: [
     {
       name: "table1",

@@ -76,9 +76,7 @@ const title = isCancel(inputTitle) ? packageJson.title : inputTitle
 const description = isCancel(inputDescription)
   ? packageJson.description
   : inputDescription
-const repository = isCancel(inputRepository)
-  ? packageJson.repository
-  : inputRepository
+const repository = isCancel(inputRepository) ? packageJson.repository : inputRepository
 const homepage = isCancel(inputHomepage) ? packageJson.homepage : inputHomepage
 const author = isCancel(inputAuthor) ? packageJson.author : inputAuthor
 
