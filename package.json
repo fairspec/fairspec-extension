@@ -5,7 +5,7 @@
   "description": "Fairspec extension template",
   "homepage": "https://fairspec.github.io/fairspec-extension",
   "author": "Evgeny Karev",
-  "repository": "https://github.com/fairspec/fairspec-extension",
+  "repository": "https://github.com/datisthq/fairspec-extension",
   "type": "module",
   "scripts": {
     "build:py": "uv --directory python build",

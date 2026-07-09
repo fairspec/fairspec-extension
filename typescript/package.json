@@ -5,7 +5,7 @@
   "homepage": "https://fairspec.github.io/fairspec-extension",
   "license": "MIT",
   "author": "Evgeny Karev",
-  "repository": "https://github.com/fairspec/fairspec-extension",
+  "repository": "https://github.com/datisthq/fairspec-extension",
   "type": "module",
   "scripts": {
     "build": "tsgo",

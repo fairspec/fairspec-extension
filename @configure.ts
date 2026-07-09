@@ -43,7 +43,7 @@ const inputDescription = await text({
 
 const inputRepository = await text({
   message: "Provide a repository URL for your extension",
-  placeholder: "https://github.com/fairspec/fairspec-extension",
+  placeholder: "https://github.com/datisthq/fairspec-extension",
   initialValue: packageJson.repository,
   validate(value) {
     if (value.length === 0) return "Repository is required!"

@@ -74,7 +74,7 @@ function Hero() {
             <ArrowRight className="size-4" />
           </Link>
           <a
-            href="https://github.com/fairspec/fairspec-extension"
+            href="https://github.com/datisthq/fairspec-extension"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(

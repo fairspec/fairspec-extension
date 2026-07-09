@@ -10,7 +10,7 @@ Fairspec Extension provides SDKs for Python and TypeScript/JavaScript to make it
 ## Python
 
 > [!NOTE]
-> In addition to the Python SDK, we recommend using [Fairspec Python](https://github.com/fairspec/fairspec-python) to manage your datasets. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
+> In addition to the Python SDK, we recommend using [Fairspec Python](https://github.com/datisthq/fairspec-python) to manage your datasets. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
 
 ### Installation
 
@@ -90,7 +90,7 @@ print(dataset)
 ## TypeScript
 
 > [!NOTE]
-> In addition to the TypeScript SDK, we recommend using [Fairspec TypeScript](https://github.com/fairspec/fairspec-typescript) to manage your datasets. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
+> In addition to the TypeScript SDK, we recommend using [Fairspec TypeScript](https://github.com/datisthq/fairspec-typescript) to manage your datasets. For example, using it you can publish your data package directory to Zenodo instead of saving it locally, as well as consume it from a remote server.
 
 ### Installation
 

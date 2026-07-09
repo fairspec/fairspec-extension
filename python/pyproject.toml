@@ -19,7 +19,7 @@ name = "Evgeny Karev"
 
 [project.urls]
 homepage = "https://fairspec.github.io/fairspec-extension"
-repository = "https://github.com/fairspec/fairspec-extension"
+repository = "https://github.com/datisthq/fairspec-extension"
 
 [build-system]
 requires = ["hatchling"]

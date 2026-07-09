@@ -3,7 +3,7 @@
 Fairspec extension template
 
 > [!TIP]
-> This is a template to create your own Fairspec Extension. To start using it, click "Use this template" on [the repository](https://github.com/fairspec/fairspec-extension) in the top right corner. After cloning a newly created repo, run `git tag v0.1.0 && git push --tags` to create an initial semantic version. Read [Contribution Guide](contributing/) for following steps. **This documentation is just a placeholder to get started with!**
+> This is a template to create your own Fairspec Extension. To start using it, click "Use this template" on [the repository](https://github.com/datisthq/fairspec-extension) in the top right corner. After cloning a newly created repo, run `git tag v0.1.0 && git push --tags` to create an initial semantic version. Read [Contribution Guide](contributing/) for following steps. **This documentation is just a placeholder to get started with!**
 
 Fairspec Extension is a data exchange format that helps `PLACEHOLDER` share their `PLACEHOLDER`. It is developed on top of the Fairspec standard.
 
