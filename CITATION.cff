@@ -6,7 +6,7 @@ abstract: Template for building Fairspec extensions.
 authors:
   - family-names: Karev
     given-names: Evgeny
-    email: eskarev@gmail.com
+    email: evgeny.karev@datist.io
 url: "https://fairspec.github.io/fairspec-extension"
 repository-code: "https://github.com/datisthq/fairspec-extension"
 license: MIT
