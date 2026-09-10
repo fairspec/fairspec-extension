@@ -1,4 +1,5 @@
 packages:
+  - project
   - typescript
 
 allowBuilds:
