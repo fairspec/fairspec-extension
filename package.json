@@ -26,7 +26,7 @@
     "test": "pnpm lint && pnpm type",
     "type": "pnpm -r type",
     "vers:py": "uv --directory python version",
-    "vers:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version",
+    "vers:ts": "pnpm version --recursive --no-git-checks",
     "vulns": "semgrep --config=p/typescript --config=p/nodejs --config=p/owasp-top-ten --config=p/secrets --metrics=off"
   },
   "devDependencies": {
@@ -60,7 +60,7 @@
     "node": "^24.0.0",
     "pnpm": "^11.0.0"
   },
-  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
+  "packageManager": "pnpm@11.26.0+sha512.fc0e2bf890b9f983611f1ab68c0637bce914390653699f83c1a78b005ed25f2c81e77920c8fd8eee2ecf0b58b28cdcb00a84d97f69bcf7c56b2f344710238664",
   "slug": "fairspec-extension",
   "title": "Fairspec Extension"
 }
