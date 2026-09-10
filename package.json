@@ -13,7 +13,7 @@
     "configure": "node @configure.ts",
     "deps": "ncu -ws -u",
     "generate": "node @generate.ts",
-    "format": "vp fmt",
+    "format": "vp fmt --no-error-on-unmatched-pattern",
     "leaks": "gitleaks git --config=.gitleaks.toml --verbose --redact",
     "lint": "vp fmt --check && vp lint",
     "prepare": "lefthook install",
